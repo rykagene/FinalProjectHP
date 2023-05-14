@@ -139,7 +139,7 @@
                 android:layout_marginLeft="20dp"
                 android:background="@drawable/rounded"
                 android:backgroundTint="#740001"
-                android:elavation="1dp"
+                android:elevation="1dp"
                 android:padding="5dip"
                 android:textSize="10sp"
                 android:textAlignment="center"
@@ -173,7 +173,7 @@
                 android:layout_marginLeft="20dp"
                 android:background="@drawable/rounded"
                 android:backgroundTint="#740001"
-                android:elavation="1dp"
+                android:elevation="1dp"
                 android:padding="5dip"
                 android:textSize="20sp" />
 
@@ -203,7 +203,7 @@
                 android:layout_marginLeft="19dp"
                 android:background="@drawable/rounded"
                 android:backgroundTint="#740001"
-                android:elavation="1dp"
+                android:elevation="1dp"
                 android:padding="5dip"
                 android:textSize="20sp" />
         </FrameLayout>
