@@ -109,7 +109,6 @@
                 android:layout_marginRight="60dp"
                 android:background="@drawable/rounded"
                 android:backgroundTint="#740001"
-                android:elavation="1dp"
                 android:padding="5dip"
                 android:textSize="20sp" />
         </FrameLayout>
@@ -256,4 +255,5 @@
             android:textAlignment="center"
             android:textSize="13sp" />
 
+</LinearLayout>
 </LinearLayout>
