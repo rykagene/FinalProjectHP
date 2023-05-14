@@ -18,6 +18,8 @@
         <pl.droidsonroids.gif.GifImageView
             android:layout_width="100dp"
             android:layout_height="100dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="10dp"
             android:elevation="5dp"
             android:src="@drawable/gryf"
             />
@@ -26,7 +28,7 @@
             android:id="@+id/BTNprofile"
             android:layout_width="50dp"
             android:layout_height="50dp"
-            android:layout_marginLeft="235dp"
+            android:layout_marginLeft="225dp"
             android:layout_marginTop="30dp"
             android:background="@drawable/profile_icon"
             android:elevation="2dp"
@@ -37,10 +39,9 @@
  <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
-        android:src="@drawable/helloW_gryf" />
+        android:src="@drawable/hello_gryf" />
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -50,7 +51,7 @@
         <FrameLayout
             android:layout_width="100dp"
             android:layout_height="65dp"
-            android:layout_marginTop="340dp"
+            android:layout_marginTop="390dp"
             android:orientation="horizontal">
 
             <ImageButton
@@ -81,7 +82,7 @@
         <FrameLayout
             android:layout_width="100dp"
             android:layout_height="65dp"
-            android:layout_marginTop="340dp"
+            android:layout_marginTop="390dp"
             android:orientation="horizontal">
 
             <ImageButton
@@ -115,7 +116,7 @@
         <FrameLayout
             android:layout_width="100dp"
             android:layout_height="65dp"
-            android:layout_marginTop="340dp"
+            android:layout_marginTop="390dp"
             android:orientation="horizontal">
 
             <ImageButton
@@ -147,7 +148,7 @@
         <FrameLayout
             android:layout_width="100dp"
             android:layout_height="65dp"
-            android:layout_marginTop="340dp"
+            android:layout_marginTop="390dp"
             android:orientation="horizontal">
 
             <ImageButton
@@ -219,6 +220,13 @@
             android:textColor="@color/darkgrey"
             android:textAlignment="center"
             android:textSize="13sp" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+
 
 </LinearLayout>
 </LinearLayout>

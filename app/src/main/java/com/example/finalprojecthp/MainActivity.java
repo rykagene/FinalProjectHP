@@ -15,6 +15,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        Bregister = findViewById(R.id.Bregister);
+
         Bregister.setOnClickListener(v -> {
             Intent intent = new Intent(getApplicationContext(), main_gryffindor.class);
         startActivity(intent);
