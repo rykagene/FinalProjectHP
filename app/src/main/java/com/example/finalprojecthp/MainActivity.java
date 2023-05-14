@@ -28,6 +28,5 @@ public class MainActivity extends AppCompatActivity {
             Intent intent = new Intent(getApplicationContext(), main_gryffindor.class);
         startActivity(intent);
         });
-
     }
 }
