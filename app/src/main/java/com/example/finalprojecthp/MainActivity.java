@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
-    Button Bregister;
+    Button btn_signIn;
 
 
     @Override
@@ -15,9 +15,9 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Bregister = findViewById(R.id.Bregister);
+        btn_signIn = findViewById(R.id.btn_signIn);
 
-        Bregister.setOnClickListener(v -> {
+        btn_signIn.setOnClickListener(v -> {
             Intent intent = new Intent(getApplicationContext(), main_gryffindor.class);
         startActivity(intent);
         });
