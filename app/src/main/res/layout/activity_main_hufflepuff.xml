@@ -4,9 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/slytherinroom2"
+    android:background="@drawable/hufflepuffroom2"
     android:orientation="vertical"
-    tools:context=".main_slytherin">
+    tools:context=".main_hufflepuff">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -30,7 +30,7 @@
             android:layout_height="100dp"
             android:layout_marginLeft="90dp"
             android:layout_marginTop="10dp"
-            android:src="@drawable/slyth"
+            android:src="@drawable/huffle"
             />
 
         <ImageButton
@@ -50,7 +50,7 @@
         android:layout_height="130dp"
         android:layout_marginLeft="50dp"
         android:layout_marginRight="50dp"
-        android:src="@drawable/hello_sly" />
+        android:src="@drawable/hello_huff" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -83,7 +83,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="60dp"
                 android:background="@drawable/rounded"
-                android:backgroundTint="#424037"
+                android:backgroundTint="#3A2912"
                 android:padding="5dip"
                 android:textSize="20sp" />
         </FrameLayout>
@@ -112,7 +112,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="30dp"
                 android:background="@drawable/rounded"
-                android:backgroundTint="#424037"
+                android:backgroundTint="#3A2912"
                 android:elevation="1dp"
                 android:padding="5dip"
                 android:textAlignment="center"
@@ -145,7 +145,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="30dp"
                 android:background="@drawable/rounded"
-                android:backgroundTint="#424037"
+                android:backgroundTint="#3A2912"
                 android:elevation="1dp"
                 android:padding="5dip"
                 android:textSize="20sp" />
@@ -223,7 +223,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="60dp"
                 android:background="@drawable/rounded"
-                android:backgroundTint="#424037"
+                android:backgroundTint="#3A2912"
                 android:padding="5dip"
                 android:textSize="20sp" />
         </FrameLayout>
@@ -253,7 +253,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="10dp"
                 android:background="@drawable/rounded"
-                android:backgroundTint="#424037"
+                android:backgroundTint="#3A2912"
                 android:padding="5dip"
                 android:textSize="20sp" />
         </FrameLayout>
@@ -283,7 +283,7 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginRight="60dp"
                 android:background="@drawable/rounded"
-                android:backgroundTint="#424037"
+                android:backgroundTint="#3A2912"
                 android:padding="5dip"
                 android:textSize="20sp" />
         </FrameLayout>
@@ -326,5 +326,6 @@
             android:textSize="13sp" />
 
     </LinearLayout>
+
 
 </LinearLayout>
