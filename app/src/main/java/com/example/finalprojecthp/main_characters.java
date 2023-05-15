@@ -21,9 +21,6 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import retrofit2.Call;
-import retrofit2.Callback;
-
 public class main_characters extends AppCompatActivity {
 
     TextView TVname;
