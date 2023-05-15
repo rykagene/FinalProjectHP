@@ -16,6 +16,7 @@ public class main_gryffindor extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        FullScreen.makeFullScreen(this);
         setContentView(R.layout.activity_main_gryffindor);
         initialize();
     }

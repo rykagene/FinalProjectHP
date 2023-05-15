@@ -4,6 +4,9 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 
@@ -17,6 +20,9 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        FullScreen.makeFullScreen(this);
+
         setContentView(R.layout.activity_main);
 
         email_signIn = findViewById(R.id.email_signIn);
@@ -26,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
 
         btn_signIn.setOnClickListener(v -> {
             Intent intent = new Intent(getApplicationContext(), main_gryffindor.class);
-        startActivity(intent);
+            startActivity(intent);
         });
     }
 }
