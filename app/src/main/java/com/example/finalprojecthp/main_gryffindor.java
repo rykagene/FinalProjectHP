@@ -18,7 +18,7 @@ public class main_gryffindor extends AppCompatActivity {
 
     private Dialog logoutConfirmationDialog;
 
-    ImageButton BTNcharacters, BTNspell, BTNbooks, BTNmovies, BTNpotions, BTNwands, BTNlogout;
+    ImageButton BTNcharacters, BTNspell, BTNbooks, BTNmovies, BTNpotions, BTNwands, BTNlogout, BTNprofile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,11 +40,21 @@ public class main_gryffindor extends AppCompatActivity {
         BTNmovies = findViewById(R.id.BTNmovies);
         BTNpotions = findViewById(R.id.BTNpotions);
         BTNwands = findViewById(R.id.BTNwands);
+        BTNprofile = findViewById(R.id.BTNprofile);
 
         BTNlogout = findViewById(R.id.BTNlogout);
 
         BTNlogout.setOnClickListener(v -> {
             logout();
+        });
+
+
+        BTNprofile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), Profile.class);
+                startActivity(intent);
+            }
         });
 
 
