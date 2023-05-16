@@ -63,15 +63,20 @@ public class main_characters extends AppCompatActivity {
                     public void onResponse(JSONObject response) {
                         try {
                             JSONObject data = response.getJSONObject("data");
-                            String message = data.getString("message");
+                            JSONObject attributes = data.getJSONObject("attributes");
 
-                            // Extract character information
-                            JSONArray charactersArray = data.getJSONArray("characters");
-                            JSONObject characterData = charactersArray.getJSONObject(0);
-                            String name = characterData.getString("name");
+                            String name = attributes.getString("name");
+                            /*
+                            String born = attributes.getString("born");
+                            String gender = attributes.getString("gender");
+                            String house = attributes.getString("house");
+
+                            JSONArray aliasNames = attributes.getJSONArray("alias_names");
+                            JSONArray familyMembers = attributes.getJSONArray("family_members");
+                            */
 
                             // Set the name in the TVname TextView
-                            TVname.setText(name.toUpperCase());
+                            TVname.setText(name);
                         } catch (JSONException e) {
                             Toast.makeText(main_characters.this, "Error: " + e.getMessage(), Toast.LENGTH_SHORT).show();
                         }
