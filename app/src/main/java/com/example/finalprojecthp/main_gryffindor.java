@@ -83,7 +83,7 @@ public class main_gryffindor extends AppCompatActivity {
         BTNpotions.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), main_slytherin.class);
+                Intent intent = new Intent(getApplicationContext(), main_potions.class);
                 startActivity(intent);
             }
         });

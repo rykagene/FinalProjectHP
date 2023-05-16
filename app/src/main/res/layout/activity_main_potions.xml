@@ -7,10 +7,18 @@
     android:background="@drawable/potionroom"
     android:orientation="vertical"
     tools:context=".main_potions">
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/potions_title" />
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="10dp"
         android:orientation="horizontal">
 
         <EditText
@@ -24,12 +32,10 @@
             android:background="@drawable/rounded"
             android:backgroundTint="#202020"
             android:gravity="center"
-            android:hint="Search Character"
+            android:hint="Search potion"
             android:paddingLeft="10dp"
-            android:textColor="@color/black"
             android:textColorHint="@color/darkgrey"
-            android:textSize="15sp"
-            >
+            android:textSize="18sp">
 
         </EditText>
 
@@ -61,27 +67,89 @@
 
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/TVname"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:elevation="1dp"
-        android:gravity="center"
-        android:textColor="#444F68"
-        android:textSize="60dp"
-        android:textStyle="bold" />
+        android:layout_height="wrap_content">
 
-    <ImageView
-        android:id="@+id/char_image"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:elevation="1dp"
-        android:gravity="center"
-        />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/char_image"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:layout_marginBottom="10dp"
+                android:background="@drawable/missingpotion"
+                android:elevation="1dp"
+                android:gravity="center" />
+
+            <TextView
+                android:id="@+id/name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:layout_marginBottom="10dp"
+                android:elevation="1dp"
+                android:gravity="center"
+                android:text="NAME"
+                android:textColor="#fff"
+                android:textSize="30dp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/effect"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:paddingLeft="20dp"
+                android:text="effect: "
+                android:textColor="#B4B4B4"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/characteristics"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:paddingLeft="20dp"
+                android:text="characteristics: "
+                android:textColor="#B4B4B4"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/difficulty"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:paddingLeft="20dp"
+                android:text="difficulty: "
+                android:textColor="#B4B4B4"
+                android:textSize="20dp" />
+
+            <TextView
+                android:id="@+id/ingredients"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:paddingLeft="20dp"
+                android:text="ingredients: "
+                android:textColor="#B4B4B4"
+                android:textSize="20dp" />
+
+
+        </LinearLayout>
+
+    </ScrollView>
 </LinearLayout>
