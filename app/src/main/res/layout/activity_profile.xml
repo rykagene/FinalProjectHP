@@ -9,7 +9,7 @@
     android:background="@drawable/raven_profile">
 
     <ImageButton
-        android:id="@+id/BTNlogout"
+        android:id="@+id/btnBack"
         android:layout_width="30dp"
         android:layout_height="30dp"
         android:layout_marginLeft="30dp"
@@ -48,10 +48,10 @@
         />
 
     <ImageView
-        android:layout_width="200dp"
-        android:layout_height="70dp"
+        android:layout_width="250dp"
+        android:layout_height="75dp"
         android:layout_gravity="center"
-        android:layout_marginTop="70dp"
+        android:layout_marginTop="60dp"
         android:src="@drawable/banner_profile" />
 
     <EditText
