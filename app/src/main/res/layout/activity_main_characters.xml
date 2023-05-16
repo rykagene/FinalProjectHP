@@ -27,9 +27,9 @@
             android:gravity="center"
             android:hint="Search Character"
             android:paddingLeft="10dp"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:textColorHint="@color/darkgrey"
-            android:textSize="15sp"
+            android:textSize="18sp"
             >
 
         </EditText>
@@ -71,9 +71,9 @@
         android:layout_marginBottom="10dp"
         android:elevation="1dp"
         android:gravity="center"
-        android:textColor="#444F68"
+        android:textColor="#fff"
         android:textSize="60dp"
-        android:text="Character Name"
+        android:text=" Name"
         android:textStyle="bold" />
 
     <ImageView

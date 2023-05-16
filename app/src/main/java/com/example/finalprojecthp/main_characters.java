@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -16,6 +17,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -25,6 +27,7 @@ public class main_characters extends AppCompatActivity {
 
     TextView TVname;
     ImageButton BTNsearch;
+    ImageView char_image;
     EditText ETsearch;
 
     @Override
@@ -39,57 +42,55 @@ public class main_characters extends AppCompatActivity {
     @Override
     protected void onStart() {
         super.onStart();
-
     }
 
     private void initialize() {
         TVname = findViewById(R.id.TVname);
+        char_image = findViewById(R.id.char_image);
         ETsearch = findViewById(R.id.ETsearch);
         BTNsearch = findViewById(R.id.BTNsearch);
 
-        BTNsearch.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                String search =  ETsearch.getText().toString().trim();
-                if (search.isEmpty()) {
-                    Toast.makeText(main_characters.this, "Please enter a name", Toast.LENGTH_SHORT).show();
-                    return;
+        BTNsearch.setOnClickListener(v -> {
+            String search = ETsearch.getText().toString().trim().toLowerCase();
+            search = search.replace(" ", "-"); // Replace spaces with dashes
+
+            if (search.isEmpty()) {
+                Toast.makeText(main_characters.this, "Please enter a name", Toast.LENGTH_SHORT).show();
+                return;
             }
-                String url = "https://api.potterdb.com/" + search;
 
-                RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
-                JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
-                    @Override
-                    public void onResponse(JSONObject response) {
-                        try {
-                            JSONObject data = response.getJSONObject("data");
-                            JSONObject attributes = data.getJSONObject("attributes");
+            String url = "https://api.potterdb.com/v1/characters/" + search;
 
-                            String name = attributes.getString("name");
-                            /*
-                            String born = attributes.getString("born");
-                            String gender = attributes.getString("gender");
-                            String house = attributes.getString("house");
+            RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
+            JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null, response -> {
+                try {
 
-                            JSONArray aliasNames = attributes.getJSONArray("alias_names");
-                            JSONArray familyMembers = attributes.getJSONArray("family_members");
-                            */
+                    JSONObject data = response.getJSONObject("data");
+                    JSONObject attributes = data.getJSONObject("attributes");
 
-                            // Set the name in the TVname TextView
-                            TVname.setText(name);
-                        } catch (JSONException e) {
-                            Toast.makeText(main_characters.this, "Error: " + e.getMessage(), Toast.LENGTH_SHORT).show();
-                        }
-                    }
-                }, new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(main_characters.this, "Error: " + error.getMessage(), Toast.LENGTH_SHORT).show();
-                    }
-                });
 
-                queue.add(request);
-            }
+                    String name = attributes.getString("name");
+                    String imageUrl = attributes.getString("image");
+                    String born = attributes.getString("born");
+                    String gender = attributes.getString("gender");
+                    String house = attributes.getString("house");
+
+                    JSONArray aliasNames = attributes.getJSONArray("alias_names");
+                    JSONArray familyMembers = attributes.getJSONArray("family_members");
+
+
+                    // Set the name in the TVname TextView
+                    TVname.setText(name);
+
+                    //load image
+                    Picasso.get().load(imageUrl).into(char_image);
+
+                } catch (JSONException e) {
+                    Toast.makeText(main_characters.this, "Error: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            }, error -> Toast.makeText(main_characters.this, "Error: " + error.getMessage(), Toast.LENGTH_SHORT).show());
+
+            queue.add(request);
         });
     }
 }
