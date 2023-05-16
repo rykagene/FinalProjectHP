@@ -44,22 +44,22 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void register() {
-        startActivity(new Intent(getApplicationContext(), RegisterActivity.class));
+        startActivity(new Intent(getApplicationContext(), main_characters.class));
     }
 
     private void login() {
         String user = email_signIn.getText().toString().trim();
         String pass = password_signIn.getText().toString().trim();
         if(user.isEmpty()) {
-            email_signIn.setError("Sorry, you must enter email.");
+            email_signIn.setError("Email Required");
         }
         if((pass.isEmpty()) ) {
-            password_signIn.setError("Sorry, you must enter pass.");
+            password_signIn.setError("Password Required");
         }
         else {
             mAuth.signInWithEmailAndPassword(user,pass).addOnCompleteListener(task -> {
                 if (task.isSuccessful()) {
-                    Toast.makeText(MainActivity.this, "Login Success", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Logged in successfully", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(getApplicationContext(), main_gryffindor.class);
                     startActivity(intent);
                 }

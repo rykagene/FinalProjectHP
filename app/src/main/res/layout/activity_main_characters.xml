@@ -73,6 +73,7 @@
         android:gravity="center"
         android:textColor="#444F68"
         android:textSize="60dp"
+        android:text="Character Name"
         android:textStyle="bold" />
 
     <ImageView
