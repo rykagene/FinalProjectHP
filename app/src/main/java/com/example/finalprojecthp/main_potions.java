@@ -16,6 +16,7 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
+import com.bumptech.glide.Glide;
 import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
@@ -102,6 +103,7 @@ public class main_potions extends AppCompatActivity {
 
                     //load image
                     Picasso.get().load(imageUrl).into(char_image);
+
 
 
                 } catch (JSONException e) {

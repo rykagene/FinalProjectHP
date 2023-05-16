@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
             mAuth.signInWithEmailAndPassword(user,pass).addOnCompleteListener(task -> {
                 if (task.isSuccessful()) {
                     Toast.makeText(MainActivity.this, "Logged in successfully.", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(getApplicationContext(), main_gryffindor.class);
+                    Intent intent = new Intent(getApplicationContext(), main_wands.class);
                     startActivity(intent);
                 }
                 else {
