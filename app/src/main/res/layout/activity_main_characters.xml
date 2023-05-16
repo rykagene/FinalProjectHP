@@ -1,17 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/platform"
+    android:background="@drawable/roombg"
     android:orientation="vertical"
     tools:context=".main_characters">
 
     <LinearLayout
         android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+>
+
+    <ImageView
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:src="@drawable/characters" />
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="10dp"
         android:orientation="horizontal">
 
         <EditText
@@ -25,9 +40,8 @@
             android:background="@drawable/rounded"
             android:backgroundTint="#202020"
             android:gravity="center"
-            android:hint="Search Character"
+            android:hint="Search a character"
             android:paddingLeft="10dp"
-            android:textColor="@color/white"
             android:textColorHint="@color/darkgrey"
             android:textSize="18sp"
             >
@@ -62,6 +76,18 @@
 
     </LinearLayout>
 
+    <ImageView
+        android:id="@+id/char_image"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="10dp"
+        android:elevation="1dp"
+        android:gravity="center"
+        android:background="@drawable/missingchar"
+        />
+
     <TextView
         android:id="@+id/TVname"
         android:layout_width="match_parent"
@@ -72,20 +98,227 @@
         android:elevation="1dp"
         android:gravity="center"
         android:textColor="#fff"
-        android:textSize="60dp"
-        android:text=" Name"
+        android:textSize="30dp"
+        android:text="NAME"
         android:textStyle="bold" />
 
-    <ImageView
-        android:id="@+id/char_image"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:elevation="1dp"
-        android:gravity="center"
-/>
+        <TextView
+            android:id="@+id/TVbday"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:textColor="#B4B4B4"
+            android:textSize="20dp"
+            android:paddingLeft="20dp"
+            android:text="Born: " />
+
+        <TextView
+            android:id="@+id/TVgender"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:paddingLeft="20dp"
+            android:textColor="#B4B4B4"
+            android:textSize="20dp"
+            android:text="Gender: " />
+        <TextView
+            android:id="@+id/TVhouse"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:paddingLeft="20dp"
+            android:textColor="#B4B4B4"
+            android:textSize="20dp"
+            android:text="House: " />
+
+        <TextView
+            android:id="@+id/TVspecies"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:paddingLeft="20dp"
+            android:textColor="#B4B4B4"
+            android:textSize="20dp"
+            android:text="Species: " />
+
+        <TextView
+            android:id="@+id/TVhaircolor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:paddingLeft="20dp"
+            android:textColor="#B4B4B4"
+            android:textSize="20dp"
+            android:text="Hair Color: " />
+
+        <TextView
+            android:id="@+id/TVeyecolor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:paddingLeft="20dp"
+            android:textColor="#B4B4B4"
+            android:textSize="20dp"
+            android:text="Eye Color: " />
+
+        <TextView
+            android:id="@+id/TVskincolor"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:paddingLeft="20dp"
+            android:textColor="#B4B4B4"
+            android:textSize="20dp"
+            android:text="Skin Color: " />
+
+        <TextView
+            android:id="@+id/TVbloodstatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:paddingLeft="20dp"
+            android:textColor="#B4B4B4"
+            android:textSize="20dp"
+            android:text="Blood Status: " />
+
+        <TextView
+            android:id="@+id/TVmaritalstatus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:paddingLeft="20dp"
+            android:textColor="#B4B4B4"
+            android:textSize="20dp"
+            android:text="Marital Status: " />
+
+        <TextView
+            android:id="@+id/TVnationality"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:paddingLeft="20dp"
+            android:textColor="#B4B4B4"
+            android:textSize="20dp"
+            android:text="Nationality: " />
+
+        <TextView
+            android:id="@+id/TVboggart"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:paddingLeft="20dp"
+            android:textColor="#B4B4B4"
+            android:textSize="20dp"
+            android:text="Boggart: " />
+
+        <TextView
+            android:id="@+id/TVpatronus"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:paddingLeft="20dp"
+            android:textColor="#B4B4B4"
+            android:textSize="20dp"
+            android:text="Patronus: " />
+
+        <TextView
+            android:id="@+id/TVjobs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:paddingLeft="20dp"
+            android:textColor="#B4B4B4"
+            android:textSize="20dp"
+            android:text="Jobs: " />
+
+        <TextView
+            android:id="@+id/TVromances"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:paddingLeft="20dp"
+            android:textColor="#B4B4B4"
+            android:textSize="20dp"
+            android:text="Romances: " />
+
+        <TextView
+            android:id="@+id/TVwands"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:paddingLeft="20dp"
+            android:textColor="#B4B4B4"
+            android:textSize="20dp"
+            android:text="Wands: " />
+
+        <TextView
+            android:id="@+id/TVtitles"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:paddingLeft="20dp"
+            android:textColor="#B4B4B4"
+            android:textSize="20dp"
+            android:text="Titles: " />
 
 
-</LinearLayout>
+        <TextView
+            android:id="@+id/TValias"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:paddingLeft="20dp"
+            android:textColor="#B4B4B4"
+            android:textSize="20dp"
+            android:text="Alias: " />
+
+        <TextView
+            android:id="@+id/TVfam"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:paddingLeft="20dp"
+            android:textColor="#B4B4B4"
+            android:textSize="20dp"
+            android:text="Family: " />
+
+
+
+    </LinearLayout>
+
+</ScrollView>
