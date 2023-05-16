@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void register() {
-        startActivity(new Intent(getApplicationContext(), main_characters.class));
+        startActivity(new Intent(getApplicationContext(), main_wands.class));
     }
 
     private void login() {
@@ -60,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
             mAuth.signInWithEmailAndPassword(user,pass).addOnCompleteListener(task -> {
                 if (task.isSuccessful()) {
                     Toast.makeText(MainActivity.this, "Logged in successfully.", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(getApplicationContext(), main_wands.class);
+                    Intent intent = new Intent(getApplicationContext(), main_gryffindor.class);
                     startActivity(intent);
                 }
                 else {
