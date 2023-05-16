@@ -244,6 +244,54 @@
             android:textSize="20dp"
             android:text="Patronus: " />
 
+        <TextView
+            android:id="@+id/TVjobs"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:paddingLeft="20dp"
+            android:textColor="#B4B4B4"
+            android:textSize="20dp"
+            android:text="Jobs: " />
+
+        <TextView
+            android:id="@+id/TVromances"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:paddingLeft="20dp"
+            android:textColor="#B4B4B4"
+            android:textSize="20dp"
+            android:text="Romances: " />
+
+        <TextView
+            android:id="@+id/TVwands"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:paddingLeft="20dp"
+            android:textColor="#B4B4B4"
+            android:textSize="20dp"
+            android:text="Wands: " />
+
+        <TextView
+            android:id="@+id/TVtitles"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:paddingLeft="20dp"
+            android:textColor="#B4B4B4"
+            android:textSize="20dp"
+            android:text="Titles: " />
+
 
         <TextView
             android:id="@+id/TValias"

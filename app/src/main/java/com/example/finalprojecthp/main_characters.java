@@ -22,7 +22,7 @@ import org.json.JSONObject;
 
 public class main_characters extends AppCompatActivity {
 
-    TextView TVname, TVbday, TVgender, TVhouse, TValias, TVfam, TVspecies, TVhaircolor, TVpatronus, TVeyecolor, TVskincolor, TVbloodstatus, TVmaritalstatus, TVnationality, TVanimagus, TVboggart;
+    TextView TVname, TVbday, TVgender, TVhouse, TValias, TVfam, TVspecies, TVhaircolor, TVpatronus, TVeyecolor, TVskincolor, TVbloodstatus, TVmaritalstatus, TVnationality, TVboggart, TVwands, TVjobs, TVromances, TVtitles;
     ImageButton BTNsearch;
     ImageView char_image;
     EditText ETsearch;
@@ -60,6 +60,10 @@ public class main_characters extends AppCompatActivity {
         TVmaritalstatus = findViewById(R.id.TVmaritalstatus);
         TVnationality = findViewById(R.id.TVnationality);
         TVboggart = findViewById(R.id.TVboggart);
+        TVwands = findViewById(R.id.TVwands);
+        TVjobs = findViewById(R.id.TVjobs);
+        TVromances = findViewById(R.id.TVromances);
+        TVtitles = findViewById(R.id.TVtitles);
 
         BTNsearch.setOnClickListener(v -> {
             String search = ETsearch.getText().toString().trim().toLowerCase();
@@ -97,18 +101,6 @@ public class main_characters extends AppCompatActivity {
                     String patronus = attributes.getString("patronus");
 
 
-                    JSONArray aliasNames = attributes.getJSONArray("alias_names");
-                    for (int i = 0; i < aliasNames.length(); i++) {
-                        String aliasName = aliasNames.getString(i);
-                        TValias.append("\n" + aliasName);
-                    }
-
-                    JSONArray family = attributes.getJSONArray("family_members");
-                    for (int i = 0; i < family.length(); i++) {
-                        String familyMembers = family.getString(i);
-                        TVfam.append("\n" + familyMembers);
-                    }
-
                     // Sets
                     TVname.setText("Name: " + name);
                     TVbday.setText("Born: " + born);
@@ -123,6 +115,42 @@ public class main_characters extends AppCompatActivity {
                     TVnationality.setText("Nationality: " + nationality);
                     TVboggart.setText("Boggart: " + boggart);
                     TVpatronus.setText("Patronous: " + patronus);
+
+                    JSONArray aliasNames = attributes.getJSONArray("alias_names");
+                    for (int i = 0; i < aliasNames.length(); i++) {
+                        String aliasName = aliasNames.getString(i);
+                        TValias.append("\n" + aliasName);
+                    }
+
+                    JSONArray family = attributes.getJSONArray("family_members");
+                    for (int i = 0; i < family.length(); i++) {
+                        String familyMembers = family.getString(i);
+                        TVfam.append("\n" + familyMembers);
+                    }
+
+                    JSONArray jobs = attributes.getJSONArray("jobs");
+                    for (int i = 0; i < jobs.length(); i++) {
+                        String job = jobs.getString(i);
+                        TVjobs.append("\n" + job);
+                    }
+
+                    JSONArray romances = attributes.getJSONArray("romances");
+                    for (int i = 0; i < romances.length(); i++) {
+                        String romance = romances.getString(i);
+                        TVromances.append("\n" + romance);
+                    }
+
+                    JSONArray wands = attributes.getJSONArray("wands");
+                    for (int i = 0; i < wands.length(); i++) {
+                        String wand = wands.getString(i);
+                        TVwands.append("\n" + wand);
+                    }
+
+                    JSONArray titles = attributes.getJSONArray("titles");
+                    for (int i = 0; i < wands.length(); i++) {
+                        String title = titles.getString(i);
+                        TVtitles.append("\n" + title);
+                    }
 
                     //load image
                     Picasso.get().load(imageUrl).into(char_image);
