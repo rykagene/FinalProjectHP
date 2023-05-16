@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/potionroom"
+    android:background="@drawable/roombg"
     android:orientation="vertical"
     tools:context=".main_potions">
     <ImageView
@@ -109,7 +109,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
                 android:paddingLeft="20dp"
-                android:text="effect: "
+                android:text="Effect: "
                 android:textColor="#B4B4B4"
                 android:textSize="20dp" />
 
@@ -121,7 +121,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
                 android:paddingLeft="20dp"
-                android:text="characteristics: "
+                android:text="Characteristics: "
                 android:textColor="#B4B4B4"
                 android:textSize="20dp" />
 
@@ -132,7 +132,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
                 android:paddingLeft="20dp"
-                android:text="difficulty: "
+                android:text="Difficulty: "
                 android:textColor="#B4B4B4"
                 android:textSize="20dp" />
 
@@ -144,7 +144,7 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
                 android:paddingLeft="20dp"
-                android:text="ingredients: "
+                android:text="Ingredients: "
                 android:textColor="#B4B4B4"
                 android:textSize="20dp" />
 
