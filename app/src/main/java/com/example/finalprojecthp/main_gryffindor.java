@@ -51,7 +51,7 @@ public class main_gryffindor extends AppCompatActivity {
         BTNcharacters.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), main_characters.class);
+                Intent intent = new Intent(getApplicationContext(), main_spells.class);
                 startActivity(intent);
             }
         });
@@ -59,7 +59,7 @@ public class main_gryffindor extends AppCompatActivity {
         BTNspell.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), main_hufflepuff.class);
+                Intent intent = new Intent(getApplicationContext(), main_spells.class);
                 startActivity(intent);
             }
         });
@@ -67,7 +67,7 @@ public class main_gryffindor extends AppCompatActivity {
         BTNbooks.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                Intent intent = new Intent(getApplicationContext(), main_books.class);
                 startActivity(intent);
             }
         });
@@ -75,7 +75,7 @@ public class main_gryffindor extends AppCompatActivity {
         BTNmovies.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), main_characters.class);
+                Intent intent = new Intent(getApplicationContext(), main_movies.class);
                 startActivity(intent);
             }
         });
@@ -91,7 +91,7 @@ public class main_gryffindor extends AppCompatActivity {
         BTNwands.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), main_ravenclaw.class);
+                Intent intent = new Intent(getApplicationContext(), main_wands.class);
                 startActivity(intent);
             }
         });
