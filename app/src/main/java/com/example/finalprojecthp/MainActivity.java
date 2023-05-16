@@ -59,7 +59,7 @@ public class MainActivity extends AppCompatActivity {
         else {
             mAuth.signInWithEmailAndPassword(user,pass).addOnCompleteListener(task -> {
                 if (task.isSuccessful()) {
-                    Toast.makeText(MainActivity.this, "Logged in successfully", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(MainActivity.this, "Logged in successfully.", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(getApplicationContext(), main_gryffindor.class);
                     startActivity(intent);
                 }
