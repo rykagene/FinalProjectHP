@@ -18,7 +18,7 @@
             android:layout_width="wrap_content"
             android:layout_height="100dp"
             android:layout_gravity="center"
-            android:src="@drawable/characters" />
+            android:src="@drawable/moviep" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -82,11 +82,11 @@
             android:layout_marginBottom="10dp"
             android:elevation="1dp"
             android:gravity="center"
-            android:background="@drawable/missingchar"
+            android:background="@drawable/missing_movie"
             />
 
         <TextView
-            android:id="@+id/TVname"
+            android:id="@+id/TVtitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -96,11 +96,11 @@
             android:gravity="center"
             android:textColor="#fff"
             android:textSize="30dp"
-            android:text="NAME"
+            android:text="TITLE"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/TVbday"
+            android:id="@+id/TVrdate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -109,10 +109,10 @@
             android:textColor="#B4B4B4"
             android:textSize="20dp"
             android:paddingLeft="20dp"
-            android:text="Born: " />
+            android:text="Release Date: " />
 
         <TextView
-            android:id="@+id/TVgender"
+            android:id="@+id/TVrtime"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -121,9 +121,9 @@
             android:paddingLeft="20dp"
             android:textColor="#B4B4B4"
             android:textSize="20dp"
-            android:text="Gender: " />
+            android:text="Running Time: " />
         <TextView
-            android:id="@+id/TVhouse"
+            android:id="@+id/TVbudget"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
@@ -131,22 +131,10 @@
             android:paddingLeft="20dp"
             android:textColor="#B4B4B4"
             android:textSize="20dp"
-            android:text="House: " />
+            android:text="Budget: " />
 
         <TextView
-            android:id="@+id/TVspecies"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
-            android:paddingLeft="20dp"
-            android:textColor="#B4B4B4"
-            android:textSize="20dp"
-            android:text="Species: " />
-
-        <TextView
-            android:id="@+id/TVhaircolor"
+            android:id="@+id/TVboxoffice"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -155,10 +143,10 @@
             android:paddingLeft="20dp"
             android:textColor="#B4B4B4"
             android:textSize="20dp"
-            android:text="Hair Color: " />
+            android:text="Box Office: " />
 
         <TextView
-            android:id="@+id/TVeyecolor"
+            android:id="@+id/TVrating"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -167,10 +155,10 @@
             android:paddingLeft="20dp"
             android:textColor="#B4B4B4"
             android:textSize="20dp"
-            android:text="Eye Color: " />
+            android:text="Rating: " />
 
         <TextView
-            android:id="@+id/TVskincolor"
+            android:id="@+id/TVorder"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -179,10 +167,10 @@
             android:paddingLeft="20dp"
             android:textColor="#B4B4B4"
             android:textSize="20dp"
-            android:text="Skin Color: " />
+            android:text="Order: " />
 
         <TextView
-            android:id="@+id/TVbloodstatus"
+            android:id="@+id/TVtrailer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -191,10 +179,10 @@
             android:paddingLeft="20dp"
             android:textColor="#B4B4B4"
             android:textSize="20dp"
-            android:text="Blood Status: " />
+            android:text="Trailer: " />
 
         <TextView
-            android:id="@+id/TVmaritalstatus"
+            android:id="@+id/TVwiki"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -203,10 +191,10 @@
             android:paddingLeft="20dp"
             android:textColor="#B4B4B4"
             android:textSize="20dp"
-            android:text="Marital Status: " />
+            android:text="Wiki: " />
 
         <TextView
-            android:id="@+id/TVnationality"
+            android:id="@+id/TVdirectors"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -215,10 +203,10 @@
             android:paddingLeft="20dp"
             android:textColor="#B4B4B4"
             android:textSize="20dp"
-            android:text="Nationality: " />
+            android:text="Directors: " />
 
         <TextView
-            android:id="@+id/TVboggart"
+            android:id="@+id/TVscreenwriters"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -227,10 +215,10 @@
             android:paddingLeft="20dp"
             android:textColor="#B4B4B4"
             android:textSize="20dp"
-            android:text="Boggart: " />
+            android:text="Screenwriters: " />
 
         <TextView
-            android:id="@+id/TVpatronus"
+            android:id="@+id/TVproducers"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -239,10 +227,10 @@
             android:paddingLeft="20dp"
             android:textColor="#B4B4B4"
             android:textSize="20dp"
-            android:text="Patronus: " />
+            android:text="Producers: " />
 
         <TextView
-            android:id="@+id/TVjobs"
+            android:id="@+id/TVcinematorgraphers"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -251,10 +239,10 @@
             android:paddingLeft="20dp"
             android:textColor="#B4B4B4"
             android:textSize="20dp"
-            android:text="Jobs: " />
+            android:text="Cinematorgraphers: " />
 
         <TextView
-            android:id="@+id/TVromances"
+            android:id="@+id/TVeditors"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -263,10 +251,10 @@
             android:paddingLeft="20dp"
             android:textColor="#B4B4B4"
             android:textSize="20dp"
-            android:text="Romances: " />
+            android:text="Editors: " />
 
         <TextView
-            android:id="@+id/TVwands"
+            android:id="@+id/TVdistributors"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -275,10 +263,10 @@
             android:paddingLeft="20dp"
             android:textColor="#B4B4B4"
             android:textSize="20dp"
-            android:text="Wands: " />
+            android:text="Distributors: " />
 
         <TextView
-            android:id="@+id/TVtitles"
+            android:id="@+id/TVmsccomp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -287,11 +275,10 @@
             android:paddingLeft="20dp"
             android:textColor="#B4B4B4"
             android:textSize="20dp"
-            android:text="Titles: " />
-
+            android:text="Music Composers: " />
 
         <TextView
-            android:id="@+id/TValias"
+            android:id="@+id/TVsummary"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -300,21 +287,7 @@
             android:paddingLeft="20dp"
             android:textColor="#B4B4B4"
             android:textSize="20dp"
-            android:text="Alias: " />
-
-        <TextView
-            android:id="@+id/TVfam"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
-            android:paddingLeft="20dp"
-            android:textColor="#B4B4B4"
-            android:textSize="20dp"
-            android:text="Family: " />
-
-
+            android:text="Summary: " />
 
     </LinearLayout>
 
