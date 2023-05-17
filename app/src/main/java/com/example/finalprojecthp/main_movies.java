@@ -72,7 +72,7 @@ public class main_movies extends AppCompatActivity {
                 return;
             }
 
-            String url = "https://api.potterdb.com/v1/characters/" + search;
+            String url = "https://api.potterdb.com/v1/movies/" + search;
 
             RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
             JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null, response -> {
