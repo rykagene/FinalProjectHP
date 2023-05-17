@@ -25,7 +25,7 @@ import org.json.JSONObject;
 
 public class main_wands extends AppCompatActivity {
 
-    TextView TVname, TVwood;
+    TextView TVname, TVwood, TVcore, TVlength, TVmade, TVchar, TVowner, TVmanu;
     ImageButton BTNsearch;
     ImageView IVwand;
     EditText ETsearch;
@@ -53,40 +53,57 @@ public class main_wands extends AppCompatActivity {
         TVname = findViewById(R.id.TVname);
         TVwood = findViewById(R.id.TVwood);
         IVwand = findViewById(R.id.IVwand);
+        TVcore = findViewById(R.id.TVcore);
+        TVlength = findViewById(R.id.TVlength);
+        TVmade = findViewById(R.id.TVmade);
+        TVchar = findViewById(R.id.TVchar);
+        TVmanu = findViewById(R.id.TVmanu);
+
 
 
 
         BTNsearch.setOnClickListener(v -> {
-            String search = ETsearch.getText().toString().trim().toLowerCase();
-            search = search.replace(" ", "-"); // Replace spaces with dashes
+            String search = ETsearch.getText().toString().trim();
 
             if (search.isEmpty()) {
                 Toast.makeText(main_wands.this, "Please enter a name", Toast.LENGTH_SHORT).show();
                 return;
             }
 
-            String url = "https://legacy--api.herokuapp.com/api/v1/wands" + search;
+            String url = "https://legacy--api.herokuapp.com/api/v1/wands/" + search;
 
             RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
             JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null, response -> {
                 try {
+                    JSONObject master = response.getJSONObject("master");
+                    String ownerName = master.getString("name");
 
-                    JSONObject data = response.getJSONObject("data");
-                    JSONObject attributes = data.getJSONObject("attributes");
+                    String imageUrl = response.getString("image_url");
+                    String woodStr = response.getString("wood");
+                    String coreStr = response.getString("core");
+                    String lengthStr = response.getString("length");
+                    String madeStr = response.getString("made");
+                    String charStr = response.getString("characteristics");
 
-                    String imageUrl = attributes.getString("image");
-                    String nameStr = attributes.getString("name");
-                    String woodStr = attributes.getString("wood");
+                    JSONArray ownersArray = response.getJSONArray("owners");
+                    for (int i = 0; i < ownersArray.length(); i++) {
+                        String owners = ownersArray.getString(i);
+                        TVowner.append("\n" + owners);
+                    }
+
+                    String manuStr = response.getString("manufacturer");
 
                     // Sets
-                    TVname.setText("Name: " + nameStr);
+                    TVname.setText(ownerName + "'s Wand");
                     TVwood.setText("Wood: " + woodStr);
+                    TVcore.setText("Core: " + coreStr);
+                    TVlength.setText("Length: " + lengthStr);
+                    TVmade.setText("Made: " + madeStr);
+                    TVchar.setText("Characteristics: " + charStr);
+                    TVmanu.setText("Manufacturer: " + manuStr);
 
-
-                    //load image
+                    // Load image
                     Picasso.get().load(imageUrl).into(IVwand);
-
-
 
                 } catch (JSONException e) {
                     Toast.makeText(main_wands.this, "Error: " + e.getMessage(), Toast.LENGTH_SHORT).show();

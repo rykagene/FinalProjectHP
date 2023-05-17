@@ -80,10 +80,9 @@
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
             android:layout_marginBottom="10dp"
-            android:elevation="1dp"
-            android:gravity="center"
             android:background="@drawable/wandp"
-            />
+            android:elevation="1dp"
+            android:gravity="center" />
 
         <TextView
             android:id="@+id/TVname"
@@ -96,8 +95,34 @@
             android:gravity="center"
             android:textColor="#fff"
             android:textSize="30dp"
-            android:text="NAME"
+            android:text="WAND"
             android:textStyle="bold" />
+
+
+        <TextView
+            android:id="@+id/TVmanu"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:textColor="#B4B4B4"
+            android:textSize="20dp"
+            android:paddingLeft="20dp"
+            android:text="Manufacturer: " />
+
+        <TextView
+            android:id="@+id/TVmade"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:textColor="#B4B4B4"
+            android:textSize="20dp"
+            android:paddingLeft="20dp"
+            android:text="Made: " />
+
 
         <TextView
             android:id="@+id/TVwood"
@@ -110,6 +135,57 @@
             android:textSize="20dp"
             android:paddingLeft="20dp"
             android:text="Wood: " />
+
+
+        <TextView
+            android:id="@+id/TVcore"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:textColor="#B4B4B4"
+            android:textSize="20dp"
+            android:paddingLeft="20dp"
+            android:text="Core: " />
+
+        <TextView
+            android:id="@+id/TVlength"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:textColor="#B4B4B4"
+            android:textSize="20dp"
+            android:paddingLeft="20dp"
+            android:text="Length: " />
+
+        <TextView
+            android:id="@+id/TVchar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:textColor="#B4B4B4"
+            android:textSize="20dp"
+            android:paddingLeft="20dp"
+            android:text="Characteristics: " />
+
+        <TextView
+            android:id="@+id/TVowners"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:textColor="#B4B4B4"
+            android:textSize="20dp"
+            android:paddingLeft="20dp"
+            android:text="Owned by: " />
+
+
 
 
 
