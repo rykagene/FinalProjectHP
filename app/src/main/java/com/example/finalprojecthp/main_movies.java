@@ -1,12 +1,6 @@
 package com.example.finalprojecthp;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.os.Bundle;
-import android.text.TextUtils;
-import android.view.View;
-import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -14,15 +8,24 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
-import com.android.volley.toolbox.JsonObjectRequest;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.squareup.picasso.Picasso;
 
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class main_movies extends AppCompatActivity {
 
@@ -32,6 +35,10 @@ public class main_movies extends AppCompatActivity {
     EditText ETsearch;
     Spinner moviespinner;
 
+
+    private RecyclerView recyclerView;
+    private CustomAdapter adapter;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,35 +46,108 @@ public class main_movies extends AppCompatActivity {
         setContentView(R.layout.activity_main_movies);
         initialize();
 
+
+
+        recyclerView = findViewById(R.id.recycler_view);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
+
+        fetchApiData();
     }
+
+    private void fetchApiData() {
+        String url = "https://api.potterdb.com/v1/movies/";
+
+        RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
+        StringRequest request = new StringRequest(Request.Method.GET, url, new Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                // API response received successfully
+                generateDataAndSetupRecyclerView(response);
+            }
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                // Handle error in fetching the API response
+                error.printStackTrace();
+                Toast.makeText(main_movies.this, "Error fetching API data", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        queue.add(request);
+    }
+    private void generateDataAndSetupRecyclerView(String apiResponse) {
+        List<ItemData> data = new ArrayList<>();
+
+        try {
+            JSONObject jsonResponse = new JSONObject(apiResponse);
+            JSONArray jsonArray = jsonResponse.getJSONArray("data");
+
+            for (int i = 0; i < jsonArray.length(); i++) {
+                JSONObject movieObject = jsonArray.getJSONObject(i);
+                JSONObject attributesObject = movieObject.getJSONObject("attributes");
+
+                String id = movieObject.getString("id");
+                String imageUrl = attributesObject.getString("poster");
+                String title = attributesObject.getString("title");
+                String release = attributesObject.getString("release_date");
+                String time = attributesObject.getString("running_time");
+
+                ItemData itemData = new ItemData(id,imageUrl, title, release, time);
+                data.add(itemData);
+            }
+
+            adapter = new CustomAdapter(data);
+            recyclerView.setAdapter(adapter);
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+            Toast.makeText(main_movies.this, "Error parsing API data", Toast.LENGTH_SHORT).show();
+        }
+    }
+
+
+
+
+
+
+
+
+
 
     @Override
     protected void onStart() {
         super.onStart();
     }
 
+
     private void initialize() {
-        char_image = findViewById(R.id.char_image);
-        ETsearch = findViewById(R.id.ETsearch);
-        BTNsearch = findViewById(R.id.BTNsearch);
-        TVtitle = findViewById(R.id.TVtitle);
-        TVrdate = findViewById(R.id.TVrdate);
-        TVrtime = findViewById(R.id.TVrtime);
-        TVbudget = findViewById(R.id.TVbudget);
-        TVboxoffice = findViewById(R.id.TVboxoffice);
-        TVrating = findViewById(R.id.TVrating);
-        TVorder = findViewById(R.id.TVorder);
-        TVtrailer = findViewById(R.id.TVtrailer);
-        TVwiki = findViewById(R.id.TVwiki);
-        TVdirectors = findViewById(R.id.TVdirectors);
-        TVscreenwriters = findViewById(R.id.TVscreenwriters);
-        TVproducers = findViewById(R.id.TVproducers);
-        TVeditors = findViewById(R.id.TVeditors);
-        TVdistributors = findViewById(R.id.TVdistributors);
-        TVmsccomp = findViewById(R.id.TVmsccomp);
-        TVsummary = findViewById(R.id.TVsummary);
-        TVsmovie = findViewById(R.id.TVsmovie);
-        moviespinner = findViewById(R.id.moviespinner);
+
+
+
+
+
+//        char_image = findViewById(R.id.char_image);
+//        ETsearch = findViewById(R.id.ETsearch);
+//        BTNsearch = findViewById(R.id.BTNsearch);
+//        TVtitle = findViewById(R.id.TVtitle);
+//        TVrdate = findViewById(R.id.TVrdate);
+//        TVrtime = findViewById(R.id.TVrtime);
+//        TVbudget = findViewById(R.id.TVbudget);
+//        TVboxoffice = findViewById(R.id.TVboxoffice);
+//        TVrating = findViewById(R.id.TVrating);
+//        TVorder = findViewById(R.id.TVorder);
+//        TVtrailer = findViewById(R.id.TVtrailer);
+//        TVwiki = findViewById(R.id.TVwiki);
+//        TVdirectors = findViewById(R.id.TVdirectors);
+//        TVscreenwriters = findViewById(R.id.TVscreenwriters);
+//        TVproducers = findViewById(R.id.TVproducers);
+//        TVeditors = findViewById(R.id.TVeditors);
+//        TVdistributors = findViewById(R.id.TVdistributors);
+//        TVmsccomp = findViewById(R.id.TVmsccomp);
+//        TVsummary = findViewById(R.id.TVsummary);
+//        TVsmovie = findViewById(R.id.TVsmovie);
+//        moviespinner = findViewById(R.id.moviespinner);
 
 
         /*

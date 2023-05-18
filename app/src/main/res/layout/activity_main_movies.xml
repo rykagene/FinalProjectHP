@@ -15,6 +15,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical"
         >
+
         <ImageView
             android:layout_marginTop="20dp"
             android:layout_width="wrap_content"
@@ -22,7 +23,10 @@
             android:layout_gravity="center"
             android:src="@drawable/moviep" />
 
-
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/recycler_view"/>
 
 
         <LinearLayout
@@ -30,52 +34,12 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:orientation="horizontal">
-
-            <TextView
-                android:id="@+id/TVsmovie"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"
-                android:paddingLeft="20dp"
-                android:text="Search a movie: "
-                android:textColor="#B4B4B4"
-                android:textSize="20dp" />
-            <Spinner
-                android:id="@+id/moviespinner"
-                android:layout_gravity="center"
-                android:layout_width="wrap_content"
-                android:layout_height="30dp" />
-
-            <ImageButton
-                android:id="@+id/BTNsearch"
-                android:layout_width="0dp"
-                android:layout_height="40dp"
-                android:layout_weight="0.1"
-                android:background="@drawable/search"
-                android:elevation="1dp"
-                android:text="Search"
-                android:layout_marginLeft="70dp"
-                android:textColor="@color/white">
-
-            </ImageButton>
-
-            <ImageButton
-                android:id="@+id/BTNclear"
-                android:layout_width="0dp"
-                android:layout_height="40dp"
-                android:layout_marginLeft="4dp"
-                android:layout_marginRight="20dp"
-                android:layout_weight="0.1"
-                android:background="@drawable/clear"
-                android:elevation="3dp"
-                android:text="Clear"
-                android:textColor="@color/white">
-
-            </ImageButton>
-
         </LinearLayout>
+
+
+
+
+
 
         <ImageView
             android:id="@+id/char_image"
