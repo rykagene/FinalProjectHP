@@ -90,7 +90,6 @@
                     app:endIconTint="#80CBC4"
                     app:hintTextColor="#80CBC4">
 
-
                     <com.google.android.material.textfield.TextInputEditText
                         android:id="@+id/RegisterUsername"
                         android:layout_width="260dp"
@@ -100,7 +99,6 @@
                         android:background="@drawable/reg_input"
                         android:drawableStart="@drawable/reg_custom_username"
                         android:drawablePadding="10dp"
-                        android:elevation="3dp"
                         android:fontFamily="@font/montserrat_medium"
                         android:hint="Username"
                         android:paddingStart="10dp"
@@ -275,16 +273,6 @@
                         android:textColor="#4a4a4a"
                         android:fontFamily="@font/montserrat_medium"
                         android:textSize="14sp"/>
-
-                    <EditText
-                        android:id="@+id/RegisterGenderOthers"
-                        android:layout_width="400px"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="35dp"
-                        android:hint="please specify"
-                        android:visibility="gone"
-                        android:textSize="14sp"
-                        android:fontFamily="@font/montserrat_medium"/>
 
                 </RadioGroup>
 

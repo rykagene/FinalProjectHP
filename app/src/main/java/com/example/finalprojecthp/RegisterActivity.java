@@ -75,6 +75,9 @@ public class RegisterActivity extends AppCompatActivity {
                 username_signUp.setError("Sorry, you must enter a username.");
             }
 
+            else if(house.isEmpty()) {
+                Toast.makeText(this, "Please pick a house", Toast.LENGTH_SHORT).show();;
+            }
 
             else {
                 mAuth.createUserWithEmailAndPassword(user,pass).addOnCompleteListener(task -> {
