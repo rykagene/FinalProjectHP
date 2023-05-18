@@ -1,3 +1,66 @@
 <resources>
     <string name="app_name">FinalProjectHP</string>
+    <string-array name="ingredients_array">
+        <item>Alihotsy</item>
+        <item>Angel\'s Trumpet</item>
+        <item>Babbling Beverage</item>
+        <item>Baneberry</item>
+        <item>Baruffio\'s Brain Elixir</item>
+        <item>Beautification Potion</item>
+        <item>Befuddlement Draught</item>
+        <item>Blood-Replenishing Potion</item>
+        <item>Bruise removal paste</item>
+        <item>Bulgeye Potion</item>
+        <item>Bundimun Pomade</item>
+        <item>Fire Seeds</item>
+        <item>Ginger roots</item>
+        <item>Leaping Toadstools</item>
+        <item>Morning dew</item>
+        <item>Rose petals</item>
+        <item>Runespoor eggs</item>
+        <item>Scurvy grass</item>
+        <item>Unicorn hair</item>
+        <item>Wormwood</item>
+        <item>Wiggentree twigs</item>
+        <item>Castor oil</item>
+        <item>Extract of Gurdyroot</item>
+        <item>Newt spleens</item>
+        <item>Bananas</item>
+        <item>An orange snake</item>
+        <item>A green leaf</item>
+        <item>Alihotsy</item>
+        <item>Pearl Dust</item>
+        <item>Angel\'s Trumpet</item>
+        <item>Fire Seeds</item>
+        <item>Powdered graphorn horn</item>
+        <item>Billywig stings</item>
+        <item>Chizpurfle carapaces</item>
+        <item>Bat wings</item>
+        <item>Armadillo bile</item>
+        <item>Wormwood</item>
+        <item>Aconite</item>
+        <item>Valerian sprigs</item>
+        <item>Dittany</item>
+        <item>Baneberry</item>
+        <item>Leaping Toadstools</item>
+        <item>Frog brains</item>
+        <item>Runespoor eggs</item>
+        <item>Powdered dragon claw</item>
+        <item>Fairy wings</item>
+        <item>Peppermint</item>
+        <item>Morning dew</item>
+        <item>Rose petals</item>
+        <item>Lady\'s Mantle</item>
+        <item>Unicorn hair</item>
+        <item>Ginger roots</item>
+        <item>Boomslang skin</item>
+        <item>Scurvy grass</item>
+        <item>Lovage</item>
+        <item>Sneezewort</item>
+        <item>Bloodroot</item>
+        <item>Bruise removal paste</item>
+        <item>Bulgeye Potion</item>
+        <item>Bundimun Pomade</item>
+    </string-array>
+
 </resources>
