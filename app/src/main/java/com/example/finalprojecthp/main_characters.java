@@ -1,6 +1,8 @@
 package com.example.finalprojecthp;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -22,6 +24,10 @@ import org.json.JSONObject;
 
 public class main_characters extends AppCompatActivity {
 
+    private RecyclerView recyclerView;
+    private RecyclerView.Adapter adapter;
+
+
     TextView TVname, TVbday, TVgender, TVhouse, TValias, TVfam, TVspecies, TVhaircolor, TVpatronus, TVeyecolor, TVskincolor, TVbloodstatus, TVmaritalstatus, TVnationality, TVboggart, TVwands, TVjobs, TVromances, TVtitles;
     ImageButton BTNsearch;
     ImageView char_image;
@@ -33,6 +39,9 @@ public class main_characters extends AppCompatActivity {
         FullScreen.makeFullScreen(this);
         setContentView(R.layout.activity_main_characters);
         initialize();
+        recyclerView = new RecyclerView(this);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
 
     }
 
@@ -116,41 +125,41 @@ public class main_characters extends AppCompatActivity {
                     TVboggart.setText("Boggart: " + boggart);
                     TVpatronus.setText("Patronous: " + patronus);
 
-                    JSONArray aliasNames = attributes.getJSONArray("alias_names");
-                    for (int i = 0; i < aliasNames.length(); i++) {
-                        String aliasName = aliasNames.getString(i);
-                        TValias.append("\n" + aliasName);
-                    }
-
-                    JSONArray family = attributes.getJSONArray("family_members");
-                    for (int i = 0; i < family.length(); i++) {
-                        String familyMembers = family.getString(i);
-                        TVfam.append("\n" + familyMembers);
-                    }
-
-                    JSONArray jobs = attributes.getJSONArray("jobs");
-                    for (int i = 0; i < jobs.length(); i++) {
-                        String job = jobs.getString(i);
-                        TVjobs.append("\n" + job);
-                    }
-
-                    JSONArray romances = attributes.getJSONArray("romances");
-                    for (int i = 0; i < romances.length(); i++) {
-                        String romance = romances.getString(i);
-                        TVromances.append("\n" + romance);
-                    }
-
-                    JSONArray wands = attributes.getJSONArray("wands");
-                    for (int i = 0; i < wands.length(); i++) {
-                        String wand = wands.getString(i);
-                        TVwands.append("\n" + wand);
-                    }
-
-                    JSONArray titles = attributes.getJSONArray("titles");
-                    for (int i = 0; i < wands.length(); i++) {
-                        String title = titles.getString(i);
-                        TVtitles.append("\n" + title);
-                    }
+//                    JSONArray aliasNames = attributes.getJSONArray("alias_names");
+//                    for (int i = 0; i < aliasNames.length(); i++) {
+//                        String aliasName = aliasNames.getString(i);
+//                        TValias.append("\n" + aliasName);
+//                    }
+//
+//                    JSONArray family = attributes.getJSONArray("family_members");
+//                    for (int i = 0; i < family.length(); i++) {
+//                        String familyMembers = family.getString(i);
+//                        TVfam.append("\n" + familyMembers);
+//                    }
+//
+//                    JSONArray jobs = attributes.getJSONArray("jobs");
+//                    for (int i = 0; i < jobs.length(); i++) {
+//                        String job = jobs.getString(i);
+//                        TVjobs.append("\n" + job);
+//                    }
+//
+//                    JSONArray romances = attributes.getJSONArray("romances");
+//                    for (int i = 0; i < romances.length(); i++) {
+//                        String romance = romances.getString(i);
+//                        TVromances.append("\n" + romance);
+//                    }
+//
+//                    JSONArray wands = attributes.getJSONArray("wands");
+//                    for (int i = 0; i < wands.length(); i++) {
+//                        String wand = wands.getString(i);
+//                        TVwands.append("\n" + wand);
+//                    }
+//
+//                    JSONArray titles = attributes.getJSONArray("titles");
+//                    for (int i = 0; i < wands.length(); i++) {
+//                        String title = titles.getString(i);
+//                        TVtitles.append("\n" + title);
+//                    }
 
                     //load image
                     Picasso.get().load(imageUrl).into(char_image);
