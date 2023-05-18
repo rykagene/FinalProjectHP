@@ -1,89 +1,192 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/spellroom"
+    android:background="@drawable/roombg"
     android:orientation="vertical"
-    tools:context=".main_spells">
+    tools:context=".main_characters">
+
+
+
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:orientation="horizontal">
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        >
 
-        <EditText
-            android:id="@+id/ETsearch"
-            android:layout_width="20dp"
-            android:layout_height="40dp"
+        <ImageView
+            android:layout_marginTop="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="100dp"
             android:layout_gravity="center"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="10dp"
-            android:layout_weight="0.7"
-            android:background="@drawable/rounded"
-            android:backgroundTint="#202020"
-            android:gravity="center"
-            android:hint="Search Character"
-            android:paddingLeft="10dp"
-            android:textColor="@color/black"
-            android:textColorHint="@color/darkgrey"
-            android:textSize="15sp"
-            >
+            android:src="@drawable/spellp" />
 
-        </EditText>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
 
-        <ImageButton
-            android:id="@+id/BTNsearch"
-            android:layout_width="0dp"
-            android:layout_height="40dp"
-            android:layout_weight="0.1"
-            android:background="@drawable/search"
+            <EditText
+                android:id="@+id/ETsearch"
+                android:layout_width="20dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="0.7"
+                android:background="@drawable/rounded"
+                android:backgroundTint="#202020"
+                android:gravity="center"
+                android:hint="Search a spell"
+                android:paddingLeft="10dp"
+                android:textColorHint="@color/darkgrey"
+                android:textSize="18sp"
+                >
+
+            </EditText>
+
+            <ImageButton
+                android:id="@+id/BTNsearch"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="0.1"
+                android:background="@drawable/search"
+                android:elevation="1dp"
+                android:text="Search"
+                android:textColor="@color/white">
+
+            </ImageButton>
+
+            <ImageButton
+                android:id="@+id/BTNclear"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_marginLeft="4dp"
+                android:layout_marginRight="20dp"
+                android:layout_weight="0.1"
+                android:background="@drawable/clear"
+                android:elevation="3dp"
+                android:text="Clear"
+                android:textColor="@color/white">
+
+            </ImageButton>
+
+        </LinearLayout>
+
+
+
+        <ImageView
+            android:id="@+id/char_image"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
             android:elevation="1dp"
-            android:text="Search"
-            android:textColor="@color/white">
+            android:gravity="center"
+            android:background="@drawable/missing_spell"
+            />
 
-        </ImageButton>
+        <TextView
+            android:id="@+id/TVname"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:elevation="1dp"
+            android:gravity="center"
+            android:textColor="#fff"
+            android:textSize="30dp"
+            android:text="SPELL NAME"
+            android:textStyle="bold" />
 
-        <ImageButton
-            android:id="@+id/BTNclear"
-            android:layout_width="0dp"
-            android:layout_height="40dp"
-            android:layout_marginLeft="4dp"
-            android:layout_marginRight="20dp"
-            android:layout_weight="0.1"
-            android:background="@drawable/clear"
-            android:elevation="3dp"
-            android:text="Clear"
-            android:textColor="@color/white">
+        <TextView
+            android:id="@+id/TVeffect"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:textColor="#B4B4B4"
+            android:textSize="20dp"
+            android:paddingLeft="20dp"
+            android:text="Effect: " />
 
-        </ImageButton>
+        <TextView
+            android:id="@+id/TVsideeffect"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:paddingLeft="20dp"
+            android:textColor="#B4B4B4"
+            android:textSize="20dp"
+            android:text="Side Effects: " />
+        <TextView
+            android:id="@+id/TVcharacteristics"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:paddingLeft="20dp"
+            android:textColor="#B4B4B4"
+            android:textSize="20dp"
+            android:text="Characteristics: " />
+
+        <TextView
+            android:id="@+id/TVtime"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:paddingLeft="20dp"
+            android:textColor="#B4B4B4"
+            android:textSize="20dp"
+            android:text="Time to brew: " />
+
+        <TextView
+            android:id="@+id/TVdiff"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:paddingLeft="20dp"
+            android:textColor="#B4B4B4"
+            android:textSize="20dp"
+            android:text="Difficulty: " />
+
+        <TextView
+            android:id="@+id/TVingredients"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:paddingLeft="20dp"
+            android:textColor="#B4B4B4"
+            android:textSize="20dp"
+            android:text="Ingredients: " />
+
+        <TextView
+            android:id="@+id/TVinventors"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:paddingLeft="20dp"
+            android:textColor="#B4B4B4"
+            android:textSize="20dp"
+            android:text="Inventors: " />
 
     </LinearLayout>
 
-    <TextView
-        android:id="@+id/TVname"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:elevation="1dp"
-        android:gravity="center"
-        android:textColor="#444F68"
-        android:textSize="60dp"
-        android:textStyle="bold" />
-
-    <ImageView
-        android:id="@+id/char_image"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        android:layout_marginBottom="10dp"
-        android:elevation="1dp"
-        android:gravity="center"
-        />
-
-</LinearLayout>
+</ScrollView>
