@@ -26,7 +26,7 @@ public class Profile extends AppCompatActivity {
         setContentView(R.layout.activity_profile);
 
         btnUpdate = findViewById(R.id.btnUpdate);
-        btnBack = findViewById(R.id.btnBack);
+
         tvEmail = findViewById(R.id.tvEmail);
 
         firebaseAuth = FirebaseAuth.getInstance();
