@@ -4,29 +4,332 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/login_bg"
     android:orientation="vertical"
     tools:context=".RegisterActivity">
 
+    <TextView
+        android:id="@+id/reg_back"
+        android:layout_width="40dp"
+        android:layout_height="45dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="20dp"
+        android:drawableStart="@drawable/reg_backarrow"/>
 
+    <TextView
+        android:layout_width="300dp"
+        android:layout_height="60dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:text="Create Account"
+        android:gravity="center"
+        android:textColor="#f7f7f7"
+        android:fontFamily="@font/harry_p"
+        android:textSize="60dp"/>
 
-
-    <EditText
-        android:id="@+id/email_signUp"
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:layout_width="320dp"
+        android:layout_marginTop="10dp"
         android:layout_height="wrap_content"
-        android:hint="email"
-        android:inputType="textEmailAddress" />
+        android:layout_gravity="center"
+        android:background="@drawable/reg_reglayout"
+        android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/pass_signUp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="pass"
-        android:inputType="textPassword" />
 
-    <Button
-        android:id="@+id/registerBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="register" />
+        <ScrollView
+            style="@android:style/Widget.Material.Light.ScrollView"
+            android:layout_width="320dp"
+            android:layout_height="640dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="25dp"
+            android:orientation="vertical"
+            android:outlineProvider="none"
+            android:overScrollMode="never"
+            android:scrollbarSize="3dp"
+            android:scrollbarStyle="insideOverlay">
+
+            <LinearLayout
+                android:layout_width="320dp"
+                android:layout_height="1000dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="90dp"
+                android:background="@drawable/reg_reglayout"
+                android:orientation="vertical">
+
+                <com.google.android.material.imageview.ShapeableImageView
+                    android:id="@+id/LoginLogo"
+                    android:layout_width="90dp"
+                    app:shapeAppearanceOverlay="@style/roundoverlay"
+                    app:strokeColor="#80CBC4"
+                    app:strokeWidth="1dp"
+                    android:layout_height="90dp"
+                    tools:src="@drawable/reg_icon"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="50dp"
+                    />
+
+                <TextView
+                    android:layout_width="127dp"
+                    android:layout_height="25dp"
+                    android:text="Add a Profile Picture"
+                    android:fontFamily="@font/magicschool_one"
+                    android:textSize="20sp"
+                    android:layout_gravity="center"/>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="320dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/reg_reglayout"
+                    android:focusable="auto"
+                    android:orientation="vertical"
+                    app:boxCollapsedPaddingTop="0dp"
+                    app:boxStrokeColor="#80CBC4"
+                    app:boxStrokeWidth="0dp"
+                    app:boxStrokeWidthFocused="2dp"
+                    app:endIconTint="#80CBC4"
+                    app:hintTextColor="#80CBC4">
+
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/RegisterUsername"
+                        android:layout_width="260dp"
+                        android:layout_height="65dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="13dp"
+                        android:background="@drawable/reg_input"
+                        android:drawableStart="@drawable/reg_custom_username"
+                        android:drawablePadding="10dp"
+                        android:elevation="3dp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:hint="Username"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="10dp"
+                        android:singleLine="true"
+                        android:textSize="16sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="320dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/reg_reglayout"
+                    android:focusable="auto"
+                    android:orientation="vertical"
+                    app:boxCollapsedPaddingTop="0dp"
+                    app:boxStrokeColor="#80CBC4"
+                    app:boxStrokeWidth="0dp"
+                    app:boxStrokeWidthFocused="2dp"
+                    app:endIconTint="#80CBC4"
+                    app:hintTextColor="#80CBC4">
+
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/RegisterName"
+                        android:layout_width="260dp"
+                        android:layout_height="65dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="13dp"
+                        android:background="@drawable/reg_input"
+                        android:drawableStart="@drawable/reg_custom_name"
+                        android:drawablePadding="10dp"
+                        android:elevation="3dp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:hint="Name"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="10dp"
+                        android:singleLine="true"
+                        android:textSize="16sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="320dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/reg_reglayout"
+                    android:focusable="auto"
+                    android:orientation="vertical"
+                    app:boxCollapsedPaddingTop="0dp"
+                    app:boxStrokeColor="#80CBC4"
+                    app:boxStrokeWidth="0dp"
+                    app:boxStrokeWidthFocused="2dp"
+                    app:endIconTint="#80CBC4"
+                    app:hintTextColor="#80CBC4">
+
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/RegisterEmail"
+                        android:layout_width="260dp"
+                        android:layout_height="65dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="13dp"
+                        android:background="@drawable/reg_input"
+                        android:drawableStart="@drawable/reg_custom_email"
+                        android:drawablePadding="10dp"
+                        android:elevation="3dp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:hint="Email"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="10dp"
+                        android:singleLine="true"
+                        android:textSize="16sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="320dp"
+                    android:layout_height="80dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/reg_reglayout"
+                    android:focusable="auto"
+                    android:orientation="vertical"
+                    app:boxCollapsedPaddingTop="0dp"
+                    app:boxStrokeColor="#80CBC4"
+                    app:boxStrokeWidth="0dp"
+                    app:boxStrokeWidthFocused="2dp"
+                    app:endIconTint="#80CBC4"
+                    app:hintTextColor="#80CBC4">
+
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/RegisterPassword"
+                        android:inputType="textPassword"
+                        android:layout_width="260dp"
+                        android:layout_height="65dp"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="13dp"
+                        android:background="@drawable/reg_input"
+                        android:drawableStart="@drawable/reg_custom_password"
+                        android:drawablePadding="10dp"
+                        android:elevation="3dp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:hint="Password"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="10dp"
+                        android:singleLine="true"
+                        android:textSize="16sp" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+
+                <RadioGroup
+                    android:id="@+id/RegisterHouseRG"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        android:layout_width="260dp"
+                        android:layout_height="50dp"
+                        android:text="Pick a House"
+                        android:textSize="16sp"
+                        android:textColor="#4a4a4a"
+                        android:padding="12dp"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:drawableStart="@drawable/reg_custom_house"
+                        android:drawablePadding="10dp"
+                        android:paddingStart="10dp"
+                        android:paddingEnd="10dp"
+                        android:paddingBottom="10dp"
+                        />
+
+                    <RadioButton
+                        android:id="@+id/RegisterHouseRB1"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:text="Gryffindor"
+                        android:textColor="#4a4a4a"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:textSize="14sp"/>
+
+                    <RadioButton
+                        android:id="@+id/RegisterHouseRB2"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:text="Slytherin"
+                        android:textColor="#4a4a4a"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:textSize="14sp"/>
+
+                    <RadioButton
+                        android:id="@+id/RegisterHouseRB3"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:text="Ravenclaw"
+                        android:textColor="#4a4a4a"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:textSize="14sp"/>
+
+                    <RadioButton
+                        android:id="@+id/RegisterHouseRB4"
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="8dp"
+                        android:text="Hufflepuff"
+                        android:textColor="#4a4a4a"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:textSize="14sp"/>
+
+                    <EditText
+                        android:id="@+id/RegisterGenderOthers"
+                        android:layout_width="400px"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="35dp"
+                        android:hint="please specify"
+                        android:visibility="gone"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/montserrat_medium"/>
+
+                </RadioGroup>
+
+                <Button
+                    android:id="@+id/RegisterBTN"
+                    android:layout_width="220dp"
+                    android:layout_height="60dp"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="25dp"
+                    android:text="REGISTER"
+                    android:textColor="@color/white"
+                    android:textSize="19sp"
+                    android:fontFamily="@font/harry_p"
+                    android:backgroundTint="#80CBC4"/>
+
+                <LinearLayout
+                    android:layout_width="260dp"
+                    android:layout_height="30dp"
+                    android:layout_gravity="center"
+                    android:gravity="center"
+                    android:layout_marginBottom="100dp"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="150dp"
+                        android:layout_height="wrap_content"
+                        android:text="Already have an account?"
+                        android:fontFamily="@font/magicschool_one"
+                        android:textSize="20sp"/>
+
+                    <TextView
+                        android:id="@+id/RegisterLogBTN"
+                        android:layout_width="40dp"
+                        android:layout_height="wrap_content"
+                        android:text="Login"
+                        android:fontFamily="@font/magicschool_one"
+                        android:textColor="#80CBC4"
+                        android:textSize="20sp"/>
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </ScrollView>
+
+    </LinearLayout>
+
 </LinearLayout>
