@@ -11,7 +11,7 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class Profile extends AppCompatActivity {
 
-    Button btnUpdate;
+    Button btnUpdate, btnBack;
     TextView tvEmail;
 
     FirebaseAuth firebaseAuth;
@@ -26,6 +26,7 @@ public class Profile extends AppCompatActivity {
         setContentView(R.layout.activity_profile);
 
         btnUpdate = findViewById(R.id.btnUpdate);
+        btnBack = findViewById(R.id.btnBack);
         tvEmail = findViewById(R.id.tvEmail);
 
         firebaseAuth = FirebaseAuth.getInstance();

@@ -93,4 +93,18 @@
         android:textSize="20dp"
         android:text="Update"
         />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="0dp"
+        android:textSize="30dp"
+        android:text="Change Password"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        />
+
+
+
 </LinearLayout>
