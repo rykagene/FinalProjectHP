@@ -1,6 +1,8 @@
 package com.example.finalprojecthp;
 
 import android.content.Intent;
+import android.media.MediaPlayer;
+import android.net.Uri;
 import android.os.Bundle;
 import android.widget.VideoView;
 
@@ -19,31 +21,30 @@ public class SplashScreenActivity extends AppCompatActivity {
 
         videoView = findViewById(R.id.videoView);
 
-        Intent intent = new Intent(SplashScreenActivity.this, main_movies.class);
+        Intent intent = new Intent(SplashScreenActivity.this, MainActivity.class);
         startActivity(intent);
 
 
-        finish();
     }
 
-//    @Override
-//    protected void onResume() {
-//        super.onResume();
-//
-//        String videoPath = "android.resource://" + getPackageName() + "/" + R.raw.splashscreen;
-//        Uri videoUri = Uri.parse(videoPath);
-//        videoView.setVideoURI(videoUri);
-//        videoView.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
-//            @Override
-//            public void onCompletion(MediaPlayer mp) {
-//                startNextActivity();
-//            }
-//        });
-//        videoView.start();
-//    }
+    @Override
+    protected void onResume() {
+        super.onResume();
+
+        String videoPath = "android.resource://" + getPackageName() + "/" + R.raw.splashscreen;
+        Uri videoUri = Uri.parse(videoPath);
+        videoView.setVideoURI(videoUri);
+        videoView.setOnCompletionListener(new MediaPlayer.OnCompletionListener() {
+            @Override
+            public void onCompletion(MediaPlayer mp) {
+                startNextActivity();
+            }
+        });
+        videoView.start();
+    }
 
     private void startNextActivity() {
-        Intent intent = new Intent(SplashScreenActivity.this, main_movies.class);
+        Intent intent = new Intent(SplashScreenActivity.this, MainActivity.class);
         startActivity(intent);
 
 
