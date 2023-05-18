@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
@@ -6,21 +7,22 @@
     android:layout_height="match_parent"
     tools:context=".Profile"
     android:orientation="vertical"
-    android:background="@drawable/raven_profile">
+    android:background="@drawable/gryff_profile">
+
 
     <ImageButton
         android:id="@+id/btnBack"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        android:layout_marginLeft="30dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="25dp"
         android:background="@drawable/back"
         android:textColor="@color/white" />
 
     <ImageView
-        android:layout_width="120dp"
-        android:layout_height="120dp"
-        android:layout_marginTop="30dp"
+        android:layout_width="90dp"
+        android:layout_height="90dp"
+        android:layout_marginTop="15dp"
         android:layout_gravity="center"
         android:src="@drawable/gryff_circle"
         />
@@ -31,8 +33,8 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:layout_marginTop="0dp"
-        android:textSize="30dp"
-        android:text="Queen Casaclang"
+        android:textSize="20dp"
+        android:text="Jeays Digo"
         android:textStyle="bold"
         android:textColor="@color/white"
         />
@@ -43,54 +45,139 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="0dp"
-        android:text="queenycasaclang@gmail.com"
+        android:textSize="15dp"
+        android:text="jeaysdigoo@gmail.com"
         android:textColor="@color/white"
         />
 
     <ImageView
         android:layout_width="250dp"
-        android:layout_height="75dp"
+        android:layout_height="63dp"
         android:layout_gravity="center"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="30dp"
         android:src="@drawable/banner_profile" />
 
-    <EditText
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="First Name"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-        android:textColor="@color/white"
-        android:layout_marginTop="10dp"
-        />
-    <EditText
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="Last Name"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
-        android:layout_marginTop="10dp"
-        android:textColor="@color/white"/>
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="10dp">
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="First Name"
+            android:textSize="15dp"
+            android:textColor="@color/white"
+            android:textColorHint="#C38C61"
+            android:background="@drawable/custom_input"
+            android:drawableStart="@drawable/ic_name"
+            android:drawablePadding="5dp"
+            android:paddingStart="5dp"
+            android:layout_marginStart="25dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="5dp" />
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Last Name"
+            android:textSize="15dp"
+            android:textColor="@color/white"
+            android:textColorHint="#C38C61"
+            android:background="@drawable/custom_input"
+            android:layout_marginStart="2dp"
+            android:layout_marginEnd="25dp"
+            android:layout_marginTop="10dp"
+            android:paddingStart="7dp"
+            />
+
+    </LinearLayout>
 
     <EditText
         android:id="@+id/etEmail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Email"
-        android:layout_marginLeft="30dp"
-        android:layout_marginRight="30dp"
+        android:layout_marginLeft="25dp"
+        android:layout_marginRight="25dp"
         android:textColor="@color/white"
-        android:layout_marginTop="10dp"/>
+        android:textSize="15dp"
+        android:layout_marginTop="15dp"
+        android:drawableStart="@drawable/ic_email"
+        android:drawablePadding="10dp"
+        android:background="@drawable/custom_input"
+        android:paddingStart="10dp"
+        android:textColorHint="#C38C61"
+        />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="House"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:gravity="center"
+        android:layout_marginTop="15dp"
+        android:textStyle="bold"
+        />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:layout_marginTop="1dp"
+        android:layout_gravity="center"
+        android:src="@drawable/gryff_name"
+        />
+
+
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        />
 
     <Button
         android:id="@+id/btnUpdate"
-        android:layout_width="match_parent"
+        android:layout_width="250dp"
+        android:layout_gravity="center"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="20dp"
         android:layout_marginRight="30dp"
         android:layout_marginLeft="30dp"
         android:backgroundTint="#F9F8D8"
         android:textSize="20dp"
         android:text="Update"
         />
+
+    <Button
+        android:id="@+id/btnClear"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="3dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginLeft="30dp"
+        android:backgroundTint="#F9F8D8"
+        android:textSize="20dp"
+        android:text="CLEAR"
+        />
+
+    <TextView
+        android:id="@+id/tv_changePS"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Click here to change password"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textStyle="italic"
+        android:layout_marginTop="7dp"
+        />
+
+
+
 </LinearLayout>
