@@ -4,83 +4,126 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/roombg"
+    android:background="@drawable/potionroom"
     android:orientation="vertical"
-    tools:context=".main_potions">
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="100dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="20dp"
-        android:src="@drawable/potions_title"
-         />
 
+
+    tools:context=".main_potions">
 
     <LinearLayout
+
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+
+        android:layout_weight="1"
+        android:gravity="center"
         android:orientation="horizontal">
 
-        <EditText
-            android:id="@+id/ETsearch"
-            android:layout_width="20dp"
-            android:layout_height="40dp"
+        <!-- back button div -->
+        <LinearLayout
+            android:layout_weight="0"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
             android:layout_gravity="center"
-            android:layout_marginLeft="20dp"
-            android:layout_marginRight="10dp"
-            android:layout_weight="0.7"
-            android:background="@drawable/rounded"
-            android:backgroundTint="#202020"
-            android:gravity="center"
-            android:hint="Search potion"
-            android:paddingLeft="10dp"
-            android:textColorHint="@color/darkgrey"
-            android:textSize="18sp">
+            android:gravity="center">
+            <!-- back button -->
+            <ImageButton
+                android:id="@+id/BTNlogout"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
 
-        </EditText>
+                android:background="@drawable/back"
+                android:textColor="@color/white" />
 
-        <ImageButton
-            android:id="@+id/BTNsearch"
-            android:layout_width="0dp"
-            android:layout_height="40dp"
-            android:layout_weight="0.1"
-            android:background="@drawable/search"
-            android:elevation="1dp"
-            android:text="Search"
-            android:textColor="@color/white">
+        </LinearLayout>
+        <!-- end back button div-->
 
-        </ImageButton>
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:orientation="vertical"
 
-        <ImageButton
-            android:id="@+id/BTNclear"
-            android:layout_width="0dp"
-            android:layout_height="40dp"
-            android:layout_marginLeft="4dp"
-            android:layout_marginRight="20dp"
-            android:layout_weight="0.1"
-            android:background="@drawable/clear"
-            android:elevation="3dp"
-            android:text="Clear"
-            android:textColor="@color/white">
+            android:gravity="center">
 
-        </ImageButton>
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/potions_title" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            ></LinearLayout>
+
+
 
     </LinearLayout>
 
-    <ScrollView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+
+<!--    <LinearLayout-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="10dp"-->
+<!--        android:orientation="horizontal">-->
+
+<!--        <EditText-->
+<!--            android:id="@+id/ETsearch"-->
+<!--            android:layout_width="20dp"-->
+<!--            android:layout_height="40dp"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:layout_marginLeft="20dp"-->
+<!--            android:layout_marginRight="10dp"-->
+<!--            android:layout_weight="0.7"-->
+<!--            android:background="@drawable/rounded"-->
+<!--            android:backgroundTint="#202020"-->
+<!--            android:gravity="center"-->
+<!--            android:hint="Search potion"-->
+<!--            android:paddingLeft="10dp"-->
+<!--            android:textColorHint="@color/darkgrey"-->
+<!--            android:textSize="18sp">-->
+
+<!--        </EditText>-->
+
+
+
+<!--        <ImageButton-->
+<!--            android:id="@+id/BTNclear"-->
+<!--            android:layout_width="0dp"-->
+<!--            android:layout_height="40dp"-->
+<!--            android:layout_marginLeft="4dp"-->
+<!--            android:layout_marginRight="20dp"-->
+<!--            android:layout_weight="0.1"-->
+<!--            android:background="@drawable/clear"-->
+<!--            android:elevation="3dp"-->
+<!--            android:text="Clear"-->
+<!--            android:textColor="@color/white">-->
+
+<!--        </ImageButton>-->
+
+<!--    </LinearLayout>-->
+
+
 
         <LinearLayout
+            android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
             <ImageView
                 android:id="@+id/char_image"
-                android:layout_width="200dp"
-                android:layout_height="200dp"
+                android:layout_width="250dp"
+                android:layout_height="250dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="20dp"
                 android:layout_marginBottom="10dp"
@@ -88,6 +131,7 @@
                 android:elevation="1dp"
                 android:gravity="center" />
 
+           <!--title-->
             <TextView
                 android:id="@+id/name"
                 android:layout_width="match_parent"
@@ -97,46 +141,25 @@
                 android:layout_marginBottom="10dp"
                 android:elevation="1dp"
                 android:gravity="center"
-                android:text="NAME"
+                android:text=""
                 android:textColor="#fff"
-                android:textSize="30dp"
+                android:textSize="20dp"
                 android:textStyle="bold" />
 
+            <!--effect textview -->
             <TextView
                 android:id="@+id/effect"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"
+
                 android:paddingLeft="20dp"
-                android:text="Effect: "
+                android:text=""
                 android:textColor="#B4B4B4"
                 android:textSize="20dp" />
 
-            <TextView
-                android:id="@+id/characteristics"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"
-                android:paddingLeft="20dp"
-                android:text="Characteristics: "
-                android:textColor="#B4B4B4"
-                android:textSize="20dp" />
-
-            <TextView
-                android:id="@+id/difficulty"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"
-                android:paddingLeft="20dp"
-                android:text="Difficulty: "
-                android:textColor="#B4B4B4"
-                android:textSize="20dp" />
-
+            <!--ingredeint textview hide-->
             <TextView
                 android:id="@+id/ingredients"
                 android:layout_width="match_parent"
@@ -145,12 +168,93 @@
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
                 android:paddingLeft="20dp"
-                android:text="Ingredients: "
+                android:text=""
                 android:textColor="#B4B4B4"
                 android:textSize="20dp" />
 
 
-        </LinearLayout>
+           <LinearLayout
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:orientation="horizontal">
+               <TextView
+                   android:id="@+id/ingredientsCount"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
 
-    </ScrollView>
+                   android:layout_marginTop="5dp"
+                   android:layout_marginBottom="5dp"
+                   android:paddingLeft="20dp"
+                   android:text="No# of Ingredients: "
+                   android:textColor="#B4B4B4"
+                   android:textSize="20dp" />
+               <Spinner
+                   android:id="@+id/ingredientCountSpinner"
+                    android:layout_gravity="center"
+                   android:layout_width="wrap_content"
+                   android:layout_height="30dp" />
+
+           </LinearLayout>
+
+
+
+
+            <LinearLayout
+                android:id="@+id/spinnerContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+            </LinearLayout>
+
+
+
+
+
+            <!--            <TextView-->
+<!--                android:id="@+id/characteristics"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_gravity="center"-->
+<!--                android:layout_marginTop="5dp"-->
+<!--                android:layout_marginBottom="5dp"-->
+<!--                android:paddingLeft="20dp"-->
+<!--                android:text="Characteristics: "-->
+<!--                android:textColor="#B4B4B4"-->
+<!--                android:textSize="20dp" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/difficulty"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginTop="5dp"-->
+<!--                android:layout_marginBottom="5dp"-->
+<!--                android:paddingLeft="20dp"-->
+<!--                android:text="Difficulty: "-->
+<!--                android:textColor="#B4B4B4"-->
+<!--                android:textSize="20dp" />-->
+
+
+
+
+        </LinearLayout>
+    <LinearLayout
+        android:layout_weight="1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+        <ImageButton
+            android:id="@+id/BTNsearch"
+            android:layout_width="180dp"
+            android:layout_height="70dp"
+            android:layout_gravity="center"
+            android:background="@drawable/mixbtn"
+            android:elevation="1dp"
+            android:text="Search"
+            android:textColor="@color/white">
+
+        </ImageButton>
+    </LinearLayout>
+
+
 </LinearLayout>
