@@ -4,20 +4,18 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/potionroom"
+    android:background="@drawable/potions_bg"
     android:orientation="vertical"
 
 
     tools:context=".main_potions">
 
     <LinearLayout
-
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="5dp"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
-
         android:layout_weight="1"
         android:gravity="center"
         android:orientation="horizontal">
@@ -56,7 +54,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="100dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
                 android:src="@drawable/potions_title" />
         </LinearLayout>
         <LinearLayout
@@ -122,10 +120,10 @@
 
             <ImageView
                 android:id="@+id/char_image"
-                android:layout_width="250dp"
-                android:layout_height="250dp"
+                android:layout_width="150dp"
+                android:layout_height="150dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="0dp"
                 android:layout_marginBottom="10dp"
                 android:background="@drawable/missingpotion"
                 android:elevation="1dp"
@@ -165,18 +163,20 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginTop="5dp"
+                android:layout_marginTop="0dp"
                 android:layout_marginBottom="5dp"
                 android:paddingLeft="20dp"
                 android:text=""
                 android:textColor="#B4B4B4"
-                android:textSize="20dp" />
+                android:textSize="0dp" />
 
 
            <LinearLayout
                android:layout_width="match_parent"
                android:layout_height="wrap_content"
-               android:orientation="horizontal">
+               android:orientation="horizontal"
+               android:layout_marginTop="20dp"
+               android:gravity="center">
                <TextView
                    android:id="@+id/ingredientsCount"
                    android:layout_width="wrap_content"
@@ -203,7 +203,9 @@
                 android:id="@+id/spinnerContainer"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:orientation="vertical" >
+                android:orientation="vertical"
+                android:gravity="center"
+                >
 
             </LinearLayout>
 
@@ -245,8 +247,8 @@
         android:layout_gravity="center">
         <ImageButton
             android:id="@+id/BTNsearch"
-            android:layout_width="180dp"
-            android:layout_height="70dp"
+            android:layout_width="170dp"
+            android:layout_height="60dp"
             android:layout_gravity="center"
             android:background="@drawable/mixbtn"
             android:elevation="1dp"
