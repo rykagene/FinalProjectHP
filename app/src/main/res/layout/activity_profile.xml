@@ -54,7 +54,7 @@
         android:layout_width="250dp"
         android:layout_height="63dp"
         android:layout_gravity="center"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="28dp"
         android:src="@drawable/banner_profile" />
 
     <LinearLayout
@@ -85,7 +85,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:hint="Last Name"
-            android:textSize="15dp"
+            android:textSize="17dp"
             android:textColor="@color/white"
             android:textColorHint="#C38C61"
             android:background="@drawable/custom_input"
@@ -155,7 +155,7 @@
         />
 
     <Button
-        android:id="@+id/btnClear"
+        android:id="@+id/btnReset"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
@@ -164,7 +164,7 @@
         android:layout_marginLeft="30dp"
         android:backgroundTint="#F9F8D8"
         android:textSize="20dp"
-        android:text="CLEAR"
+        android:text="Reset"
         />
 
     <TextView

@@ -2,6 +2,7 @@ package com.example.finalprojecthp;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -14,7 +15,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class Profile extends AppCompatActivity {
 
     Button btnUpdate, btnBack;
-    TextView tvEmail;
+    TextView tvEmail, tv_changePS;
 
     EditText et_Email;
 
@@ -32,6 +33,7 @@ public class Profile extends AppCompatActivity {
         btnUpdate = findViewById(R.id.btnUpdate);
         et_Email = findViewById(R.id.etEmail);
         tvEmail = findViewById(R.id.tvEmail);
+        tv_changePS = findViewById(R.id.tv_changePS);
 
         firebaseAuth = FirebaseAuth.getInstance();
         user = firebaseAuth.getCurrentUser();
@@ -47,6 +49,14 @@ public class Profile extends AppCompatActivity {
             public void onClick(View v) {
 
 
+            }
+        });
+
+        tv_changePS.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), change_ps.class);
+                startActivity(intent);
             }
         });
 
