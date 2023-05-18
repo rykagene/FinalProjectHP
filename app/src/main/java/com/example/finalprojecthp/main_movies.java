@@ -72,7 +72,79 @@ public class main_movies extends AppCompatActivity {
                 return;
             }
 
-            String url = "https://api.potterdb.com/v1/movies/" + search;
+            String url = "https://api.potterdb.com/v1/movies";
+
+            RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
+            String finalSearch = search;
+            JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null, response -> {
+                try {
+                    JSONArray movies = response.getJSONArray("data");
+
+                    String slug = "";
+                    for (int i = 0; i < movies.length(); i++) {
+                        JSONObject movie = movies.getJSONObject(i);
+                        String title = movie.optString("title", "").toLowerCase();
+
+                        if (title.equals(finalSearch)) {
+                            slug = movie.optString("slug", "");
+                            break;
+                        }
+                    }
+
+                    if (!slug.isEmpty()) {
+                        // Perform a separate request to retrieve detailed information based on the obtained slug
+                        String movieUrl = "https://api.potterdb.com/v1/movies/" + slug;
+                        JsonObjectRequest movieRequest = new JsonObjectRequest(Request.Method.GET, movieUrl, null, movieResponse -> {
+                            JSONObject movieData = movieResponse.optJSONObject("data");
+                            if (movieData != null) {
+                                JSONObject attributes = movieData.optJSONObject("attributes");
+                                if (attributes != null) {
+                                    String title = attributes.optString("title", "");
+                                    String imageUrl = attributes.optString("poster", "");
+                                    String rdate = attributes.optString("release_date", "");
+                                    String rtime = attributes.optString("runtime", "");
+                                    String budget = attributes.optString("budget", "");
+                                    String boxoffice = attributes.optString("box_office", "");
+                                    String rating = attributes.optString("rating", "");
+                                    String order = attributes.optString("order", "");
+                                    String trailer = attributes.optString("trailer", "");
+                                    String wiki = attributes.optString("wiki", "");
+                                    String summary = attributes.optString("summary", "");
+
+                                    // Update the UI with the retrieved movie information
+                                    TVtitle.setText("Title: " + title);
+                                    TVrdate.setText("Release Date: " + rdate);
+                                    // Set other TextViews as needed
+
+                                    // Load the image using Picasso
+                                    Picasso.get().load(imageUrl).into(char_image);
+                                } else {
+                                    Toast.makeText(main_movies.this, "Movie details not available", Toast.LENGTH_SHORT).show();
+                                }
+                            } else {
+                                Toast.makeText(main_movies.this, "Invalid movie data", Toast.LENGTH_SHORT).show();
+                            }
+                        }, movieError -> {
+                            Toast.makeText(main_movies.this, "Error: " + movieError.getMessage(), Toast.LENGTH_SHORT).show();
+                        });
+
+                        queue.add(movieRequest);
+                    } else {
+                        Toast.makeText(main_movies.this, "Movie not found", Toast.LENGTH_SHORT).show();
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    Toast.makeText(main_movies.this, "Error: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                }
+            }, error -> {
+                Toast.makeText(main_movies.this, "Error: " + error.getMessage(), Toast.LENGTH_SHORT).show();
+            });
+
+            queue.add(request);
+        });
+
+
+        /*
 
             RequestQueue queue = Volley.newRequestQueue(getApplicationContext());
             JsonObjectRequest request = new JsonObjectRequest(Request.Method.GET, url, null, response -> {
@@ -154,5 +226,9 @@ public class main_movies extends AppCompatActivity {
 
             queue.add(request);
         });
+    }
+
+
+         */
     }
 }
