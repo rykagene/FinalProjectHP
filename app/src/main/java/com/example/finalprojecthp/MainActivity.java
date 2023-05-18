@@ -44,7 +44,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void register() {
-        startActivity(new Intent(getApplicationContext(), main_potions.class));
+        startActivity(new Intent(getApplicationContext(), RegisterActivity.class));
     }
 
     private void login() {
