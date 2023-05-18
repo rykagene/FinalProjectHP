@@ -189,7 +189,7 @@ public class main_potions extends AppCompatActivity {
 
 
                 } catch (JSONException e) {
-                    Toast.makeText(main_potions.this, "Errora: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                    Toast.makeText(main_potions.this, "Errors: " + e.getMessage(), Toast.LENGTH_SHORT).show();
                 }
             }, error -> Toast.makeText(main_potions.this, "Errors: " + error.getMessage(), Toast.LENGTH_SHORT).show());
 

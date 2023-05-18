@@ -4,9 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.ImageView;
+import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,10 +26,11 @@ import org.json.JSONObject;
 
 public class main_movies extends AppCompatActivity {
 
-    TextView TVtitle, TVrdate, TVrtime, TVbudget, TVboxoffice, TVdistributors, TVrating, TVorder, TVtrailer, TVwiki, TVdirectors, TVscreenwriters, TVproducers, TVeditors, TVmsccomp, TVsummary;
+    TextView TVtitle, TVsmovie, TVrdate, TVrtime, TVbudget, TVboxoffice, TVdistributors, TVrating, TVorder, TVtrailer, TVwiki, TVdirectors, TVscreenwriters, TVproducers, TVeditors, TVmsccomp, TVsummary;
     ImageButton BTNsearch;
     ImageView char_image;
     EditText ETsearch;
+    Spinner moviespinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -61,8 +66,11 @@ public class main_movies extends AppCompatActivity {
         TVdistributors = findViewById(R.id.TVdistributors);
         TVmsccomp = findViewById(R.id.TVmsccomp);
         TVsummary = findViewById(R.id.TVsummary);
+        TVsmovie = findViewById(R.id.TVsmovie);
+        moviespinner = findViewById(R.id.moviespinner);
 
 
+        /*
         BTNsearch.setOnClickListener(v -> {
             String search = ETsearch.getText().toString().trim().toLowerCase();
             search = search.replace(" ", "-"); // Replace spaces with dashes
@@ -142,6 +150,8 @@ public class main_movies extends AppCompatActivity {
 
             queue.add(request);
         });
+
+        */
 
 
         /*

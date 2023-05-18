@@ -8,6 +8,8 @@
     android:orientation="vertical"
     tools:context=".main_movies">
 
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -20,30 +22,31 @@
             android:layout_gravity="center"
             android:src="@drawable/moviep" />
 
+
+
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
             android:orientation="horizontal">
 
-            <EditText
-                android:id="@+id/ETsearch"
-                android:layout_width="20dp"
-                android:layout_height="40dp"
-                android:layout_gravity="center"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="10dp"
-                android:layout_weight="0.7"
-                android:background="@drawable/rounded"
-                android:backgroundTint="#202020"
-                android:gravity="center"
-                android:hint="Search a movie"
-                android:paddingLeft="10dp"
-                android:textColorHint="@color/darkgrey"
-                android:textSize="18sp"
-                >
+            <TextView
+                android:id="@+id/TVsmovie"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
 
-            </EditText>
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:paddingLeft="20dp"
+                android:text="Search a movie: "
+                android:textColor="#B4B4B4"
+                android:textSize="20dp" />
+            <Spinner
+                android:id="@+id/moviespinner"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp" />
 
             <ImageButton
                 android:id="@+id/BTNsearch"
@@ -53,6 +56,7 @@
                 android:background="@drawable/search"
                 android:elevation="1dp"
                 android:text="Search"
+                android:layout_marginLeft="70dp"
                 android:textColor="@color/white">
 
             </ImageButton>
