@@ -95,6 +95,7 @@ public class RegisterActivity extends AppCompatActivity {
                     if (task.isSuccessful()) {
 
                         // Store additional user information in the database
+
                         User userDetails = new User(email,pass, fname,lname, house);
                         dao.add(userDetails).addOnCompleteListener(suc -> {
                             Toast.makeText(RegisterActivity.this, "Register Success", Toast.LENGTH_SHORT).show();

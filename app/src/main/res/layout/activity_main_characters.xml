@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/roombg"
+    android:background="@drawable/character_bg"
     android:orientation="vertical"
     tools:context=".main_characters">
 
@@ -17,12 +17,38 @@
         android:orientation="vertical"
 >
 
-    <ImageView
-        android:layout_marginTop="20dp"
-        android:layout_width="wrap_content"
-        android:layout_height="100dp"
-        android:layout_gravity="center"
-        android:src="@drawable/characters" />
+        <!-- back button div -->
+        <LinearLayout
+            android:layout_weight="0"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:paddingRight="20dp"
+            android:gravity="center">
+
+            <!-- back button -->
+            <ImageButton
+                android:id="@+id/BTNlogout"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:background="@drawable/back"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginLeft="20dp"
+                android:textColor="@color/white" />
+
+            <ImageView
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:src="@drawable/characters" />
+        </LinearLayout>
+        <!-- end back button div-->
+
+
+
 
     <LinearLayout
         android:layout_width="match_parent"

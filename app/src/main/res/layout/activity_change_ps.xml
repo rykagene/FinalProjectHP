@@ -24,6 +24,7 @@
         android:hint="Enter old Password"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
+        android:drawableStart="@drawable/ic_unlock"
         />
 
     <EditText
@@ -33,6 +34,7 @@
         android:hint="Enter new password"
         android:layout_gravity="center"
         android:layout_marginTop="5dp"
+        android:drawableStart="@drawable/ic_lock"
         />
 
     <EditText
@@ -41,7 +43,7 @@
         android:layout_height="wrap_content"
         android:hint="Enter confirm Password"
         android:layout_gravity="center"
-
+        android:drawableStart="@drawable/ic_lock"
         />
 
     <Button

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/roombg"
+    android:background="@drawable/spells_bg"
     android:orientation="vertical"
     tools:context=".main_spells">
 
@@ -14,12 +14,38 @@
         android:orientation="vertical"
         >
 
-        <ImageView
-            android:layout_marginTop="20dp"
+        <!-- back button div -->
+        <LinearLayout
+            android:layout_weight="0"
             android:layout_width="wrap_content"
-            android:layout_height="100dp"
-            android:layout_gravity="center"
-            android:src="@drawable/spellp" />
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:paddingRight="20dp"
+            android:gravity="center">
+
+            <!-- back button -->
+            <ImageButton
+                android:id="@+id/BTNlogout"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="20dp"
+                android:layout_marginRight="30dp"
+                android:background="@drawable/back"
+                android:textColor="@color/white" />
+
+            <ImageView
+                android:layout_marginTop="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="40dp"
+                android:src="@drawable/spellp" />
+        </LinearLayout>
+        <!-- end back button div-->
+
+
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -36,7 +62,7 @@
                 android:layout_marginRight="10dp"
                 android:layout_weight="0.7"
                 android:background="@drawable/rounded"
-                android:backgroundTint="#202020"
+                android:backgroundTint="#AD202020"
                 android:gravity="center"
                 android:hint="Search a spell"
                 android:paddingLeft="10dp"

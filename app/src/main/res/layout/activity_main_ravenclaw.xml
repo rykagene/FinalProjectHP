@@ -25,8 +25,8 @@
             <!-- back button -->
             <ImageButton
                 android:id="@+id/BTNlogout"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="24dp"
+                android:layout_height="23dp"
                 android:layout_gravity="center"
 
                 android:background="@drawable/back"

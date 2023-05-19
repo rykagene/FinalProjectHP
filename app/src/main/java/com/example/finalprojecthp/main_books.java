@@ -1,12 +1,6 @@
 package com.example.finalprojecthp;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.widget.EditText;
-import android.widget.ImageButton;
-import android.widget.ImageView;
-import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -30,29 +24,20 @@ import java.util.List;
 
 public class main_books extends AppCompatActivity {
 
-    TextView TVtitle, TVsmovie, TVrdate, TVrtime, TVbudget, TVboxoffice, TVdistributors, TVrating, TVorder, TVtrailer, TVwiki, TVdirectors, TVscreenwriters, TVproducers, TVeditors, TVmsccomp, TVsummary;
-    ImageButton BTNsearch;
-    ImageView char_image;
-    EditText ETsearch;
-    Spinner moviespinner;
-
-
-    RecyclerView recyclerView;
-    BookAdapter adapter2;
-    RecyclerView.LayoutManager layoutManager;
+    private RecyclerView recyclerView;
+    private CustomAdapter adapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        FullScreen.makeFullScreen(this);
         setContentView(R.layout.activity_main_books);
+
         recyclerView = findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
 
         fetchApiData();
     }
-
     private void fetchApiData() {
         String url = "https://api.potterdb.com/v1/books/";
 
@@ -74,9 +59,8 @@ public class main_books extends AppCompatActivity {
 
         queue.add(request);
     }
-
     private void generateDataAndSetupRecyclerView(String apiResponse) {
-        List<ItemData2> data = new ArrayList<>();
+        List<ItemData> data = new ArrayList<>();
 
         try {
             JSONObject jsonResponse = new JSONObject(apiResponse);
@@ -87,54 +71,24 @@ public class main_books extends AppCompatActivity {
                 JSONObject attributesObject = movieObject.getJSONObject("attributes");
 
                 String id = movieObject.getString("id");
-                String imageUrl = attributesObject.getString("cover");
+                String imageUrl = attributesObject.getString("poster");
                 String title = attributesObject.getString("title");
                 String release = attributesObject.getString("release_date");
-                String author = attributesObject.getString("author");
-                String summary = attributesObject.getString("summary");
+                String time = attributesObject.getString("running_time");
+                String rating = attributesObject.getString("rating");
+                String director = attributesObject.getString("directors");
+                String producer = attributesObject.getString("producers");
 
-//                String time = attributesObject.getString("running_time");
-//                String rating = attributesObject.getString("rating");
-//                String director = attributesObject.getString("directors");
-//                String producer = attributesObject.getString("producers");
-
-                ItemData2 itemData2 = new ItemData2(id,imageUrl, title, release, summary, author);
-                data.add(itemData2);
+                ItemData itemData = new ItemData(id,imageUrl, title, release, time, rating, director, producer);
+                data.add(itemData);
             }
 
-            layoutManager = new LinearLayoutManager(this);
-            adapter2 = new BookAdapter(this, R.layout.book_list_view, data);
-            recyclerView.setLayoutManager(layoutManager);
-            recyclerView.setAdapter(adapter2);
+            adapter = new CustomAdapter(this, R.layout.list_item_view, data);
+            recyclerView.setAdapter(adapter);
 
         } catch (JSONException e) {
             e.printStackTrace();
             Toast.makeText(main_books.this, "Error parsing API data", Toast.LENGTH_SHORT).show();
         }
-
-        adapter2.setOnItemClickListener(new BookAdapter.OnItemClickListener() {
-            @Override
-            public void onItemClick(int position) {
-                ItemData2 selectedItem = data.get(position);
-
-                Intent intent = new Intent(main_books.this, BookDetailsActivity.class);
-                intent.putExtra("bookId", selectedItem.getId());
-                intent.putExtra("bookTitle", selectedItem.getTitle());
-                intent.putExtra("book_img", selectedItem.getImageUrl());
-                intent.putExtra("bookSummary", selectedItem.getSummary());
-                intent.putExtra("bookAuthor", selectedItem.getAuthor());
-                intent.putExtra("bookRelease", selectedItem.getRelease());
-                startActivity(intent);
-            }
-        });
-
-
-
-
     }
-
 }
-
-
-
-
