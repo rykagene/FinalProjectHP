@@ -93,7 +93,7 @@ public class main_movies extends AppCompatActivity {
                 String release = attributesObject.getString("release_date");
                 String time = attributesObject.getString("running_time");
 
-                ItemData itemData = new ItemData(id, imageUrl, title, id,imageUrl, title, release, time);
+                ItemData itemData = new ItemData(id,imageUrl, title, release, time);
                 data.add(itemData);
             }
 

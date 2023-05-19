@@ -72,15 +72,12 @@ public class main_books extends AppCompatActivity {
                 JSONObject attributesObject = movieObject.getJSONObject("attributes");
 
                 String id = movieObject.getString("id");
-                String imageUrl = attributesObject.getString("cover");
+                String imageUrl = attributesObject.getString("poster");
                 String title = attributesObject.getString("title");
-                String author = attributesObject.getString("author");
                 String release = attributesObject.getString("release_date");
-                String time = attributesObject.getString("pages");
-                String order = attributesObject.getString("order");
-                String summary = attributesObject.getString("summary");
+                String time = attributesObject.getString("running_time");
 
-                ItemData itemData = new ItemData(id,imageUrl,title,author,release,time,order,summary);
+                ItemData itemData = new ItemData(id,imageUrl, title, release, time);
                 data.add(itemData);
             }
 
