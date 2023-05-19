@@ -1,5 +1,6 @@
 package com.example.finalprojecthp;
 
+import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,22 +16,30 @@ import com.squareup.picasso.Picasso;
 import java.util.List;
 
 public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder> {
-        private List<ItemData> data;
+        public List<ItemData> data;
+        Context context;
+        int layout;
 
-        public CustomAdapter(List<ItemData> data) {
+        static OnItemClickListener listener;
+
+        public CustomAdapter(Context context, int layout, List<ItemData> data) {
+                this.context = context;
+                this.layout = layout;
                 this.data = data;
         }
 
         @NonNull
         @Override
         public ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-                View rowItem = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_item_view, parent, false);
+                LayoutInflater inflater = LayoutInflater.from(context);
+                View rowItem = inflater.inflate(layout, parent, false);
                 return new ViewHolder(rowItem);
+
         }
 
         @Override
         public void onBindViewHolder(CustomAdapter.ViewHolder holder, int position) {
-                ItemData item = this.data.get(position);
+                ItemData item = data.get(position);
                 holder.textView.setText(item.getTitle());
 
                 String release = item.getRelease();
@@ -47,21 +56,19 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
                 // Example with Picasso:
                  Picasso.get().load(item.getImageUrl()).into(holder.imageView);
 
-                // Set onClickListener for the item
-                holder.itemView.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View view) {
-                                // Start MovieDetailsActivity and pass the movie ID
-                                Intent intent = new Intent(view.getContext(), MovieDetailsActivity.class);
-                                intent.putExtra("movieId", item.getId());
-                                view.getContext().startActivity(intent);
-                        }
-                });
         }
 
         @Override
         public int getItemCount() {
                 return this.data.size();
+        }
+
+        public interface OnItemClickListener{
+                void onItemClick(int position);
+
+        }
+        public void setOnItemClickListener(OnItemClickListener listenerActivity) {
+                listener = listenerActivity;
         }
 
         public static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
@@ -80,28 +87,12 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
 
                 @Override
                 public void onClick(View view) {
-                        // Get the position of the clicked item.
-
-
-                        // Get the data for the clicked item.
-                        String title = textView.getText().toString();
-                        String details = textView2.getText().toString();
-                        String time = textView3.getText().toString();
-                        int pos = getLayoutPosition();
-
-
-                        // Create an intent to send the data to another activity.
-                        Intent intent = new Intent(view.getContext(), MovieDetailsActivity.class);
-                        intent.putExtra("title", title);
-                        intent.putExtra("details", details);
-                        intent.putExtra("time", time);
-                        intent.putExtra(String.valueOf(pos), pos);
-
-
-
-
-                        // Start the activity.
-                        view.getContext().startActivity(intent);
+                        if (listener != null){
+                                int position = getAdapterPosition();
+                                if (position != RecyclerView.NO_POSITION){
+                                        listener.onItemClick(position);
+                                }
+                        }
 
 
                 }

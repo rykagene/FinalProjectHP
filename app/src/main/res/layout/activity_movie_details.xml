@@ -23,8 +23,11 @@
             android:id="@+id/titleTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="TextView" />
+            android:layout_gravity="left"
+            android:layout_marginBottom="30dp"
+            android:text="Title"
+            android:fontFamily="@font/montserrat_medium"
+            android:textSize="25sp"/>
         <TextView
             android:id="@+id/detailsTextView"
             android:layout_width="wrap_content"

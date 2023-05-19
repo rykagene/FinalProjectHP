@@ -22,12 +22,7 @@ public class MovieDetailsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_movie_details);
 
-        if (getIntent().hasExtra("title")) {
-            String title = getIntent().getStringExtra("title");
-            Toast.makeText(this, title, Toast.LENGTH_SHORT).show();
-        } else {
-            Toast.makeText(this, "No title", Toast.LENGTH_SHORT).show();
-        }
+
 
 
 //        if (!(pos=="1")){
@@ -39,7 +34,7 @@ public class MovieDetailsActivity extends AppCompatActivity {
 //        }
 
 
-
+s
 
         WebView webView = findViewById(R.id.youtubeWebView);
         webView.getSettings().setJavaScriptEnabled(true);
@@ -57,11 +52,11 @@ public class MovieDetailsActivity extends AppCompatActivity {
         directorTextView = findViewById(R.id.directorTextView);
 
         // Retrieve the movie ID from the Intent
-        String movieId = getIntent().getStringExtra("movieId");
+        String movTitle = getIntent().getStringExtra("movTitle");
 
 
         // Update the TextViews with the retrieved information
-//        titleTextView.setText(title);
+        titleTextView.setText(movTitle);
 //        detailsTextView.setText(details);
 //        directorTextView.setText(time);
 
