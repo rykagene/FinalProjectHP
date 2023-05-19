@@ -34,7 +34,6 @@ public class MovieDetailsActivity extends AppCompatActivity {
 //        }
 
 
-s
 
         WebView webView = findViewById(R.id.youtubeWebView);
         webView.getSettings().setJavaScriptEnabled(true);

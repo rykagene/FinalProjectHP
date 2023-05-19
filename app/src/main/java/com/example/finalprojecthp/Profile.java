@@ -72,6 +72,7 @@ public class Profile extends AppCompatActivity {
                     for (DataSnapshot userSnapshot : snapshot.getChildren()) {
 
                         // retrieve ng id, fname,lname
+
                         String key = userSnapshot.getKey();
                         String fname = userSnapshot.child("fname").getValue(String.class);
                         String lname = userSnapshot.child("lname").getValue(String.class);
