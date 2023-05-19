@@ -1,27 +1,20 @@
 package com.example.finalprojecthp;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.FirebaseApp;
-import com.google.firebase.auth.AuthResult;
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 public class MainActivity extends AppCompatActivity {
@@ -65,62 +58,62 @@ public class MainActivity extends AppCompatActivity {
         else {
             mAuth.signInWithEmailAndPassword(user,pass).addOnCompleteListener(task -> {
                 if (task.isSuccessful()) {
-                    // Retrieve the user's data from Firebase
                     FirebaseUser firebaseUser = mAuth.getCurrentUser();
-                    String userId = firebaseUser.getUid();
-                    DatabaseReference userRef = FirebaseDatabase.getInstance().getReference().child("User").child(userId);
-                    userRef.addListenerForSingleValueEvent(new ValueEventListener() {
+                    String userEmail = firebaseUser.getEmail();
+
+                    FirebaseDatabase database = FirebaseDatabase.getInstance();
+                    DatabaseReference usersRef = database.getReference("User");
+
+                    Query userQuery = usersRef.orderByChild("email").equalTo(userEmail);
+                    userQuery.addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
-                        public void onDataChange(@NonNull DataSnapshot snapshot) {
-                            if (snapshot.exists()) {
-                                // Check the user's house
-                                String house = snapshot.child("house").getValue(String.class);
-                                if (house != null) {
-                                    Intent intent;
-                                    switch (house) {
-                                        case "Gryffindor":
-                                            Toast.makeText(MainActivity.this, "Logged in successfully as Gryffindor.", Toast.LENGTH_SHORT).show();
-                                            intent = new Intent(getApplicationContext(), main_gryffindor.class);
-                                            startActivity(intent);
-                                            break;
-                                        case "Hufflepuff":
-                                            Toast.makeText(MainActivity.this, "Logged in successfully as Hufflepuff.", Toast.LENGTH_SHORT).show();
-                                            intent = new Intent(getApplicationContext(), main_hufflepuff.class);
-                                            startActivity(intent);
-                                            break;
-                                        case "Slytherin":
-                                            Toast.makeText(MainActivity.this, "Logged in successfully as Slytherin.", Toast.LENGTH_SHORT).show();
-                                            intent = new Intent(getApplicationContext(), main_slytherin.class);
-                                            startActivity(intent);
-                                            break;
-                                        case "Ravenclaw":
-                                            Toast.makeText(MainActivity.this, "Logged in successfully as Ravenclaw.", Toast.LENGTH_SHORT).show();
-                                            intent = new Intent(getApplicationContext(), main_ravenclaw.class);
-                                            startActivity(intent);
-                                            break;
-                                        default:
-                                            Toast.makeText(MainActivity.this, "Invalid house.", Toast.LENGTH_SHORT).show();
-                                            break;
+                        public void onDataChange(DataSnapshot dataSnapshot) {
+                            if (dataSnapshot.exists()) {
+                                for (DataSnapshot userSnapshot : dataSnapshot.getChildren()) {
+                                    String house = userSnapshot.child("house").getValue(String.class);
+                                    if (house != null) {
+                                        Intent intent;
+                                        switch (house) {
+                                            case "Gryffindor":
+                                                Toast.makeText(MainActivity.this, "Logged in successfully as Gryffindor.", Toast.LENGTH_SHORT).show();
+                                                intent = new Intent(getApplicationContext(), main_gryffindor.class);
+                                                startActivity(intent);
+                                                break;
+                                            case "Hufflepuff":
+                                                Toast.makeText(MainActivity.this, "Logged in successfully as Hufflepuff.", Toast.LENGTH_SHORT).show();
+                                                intent = new Intent(getApplicationContext(), main_hufflepuff.class);
+                                                startActivity(intent);
+                                                break;
+                                            case "Slytherin":
+                                                Toast.makeText(MainActivity.this, "Logged in successfully as Slytherin.", Toast.LENGTH_SHORT).show();
+                                                intent = new Intent(getApplicationContext(), main_slytherin.class);
+                                                startActivity(intent);
+                                                break;
+                                            case "Ravenclaw":
+                                                Toast.makeText(MainActivity.this, "Logged in successfully as Ravenclaw.", Toast.LENGTH_SHORT).show();
+                                                intent = new Intent(getApplicationContext(), main_ravenclaw.class);
+                                                startActivity(intent);
+                                                break;
+                                            default:
+                                                Toast.makeText(MainActivity.this, "Invalid house.", Toast.LENGTH_SHORT).show();
+                                                break;
+                                        }
+                                    } else {
+                                        Toast.makeText(MainActivity.this, "House data not found.", Toast.LENGTH_SHORT).show();
                                     }
-                                } else {
-                                    Toast.makeText(MainActivity.this, "House data not found.", Toast.LENGTH_SHORT).show();
                                 }
                             } else {
-                                Toast.makeText(MainActivity.this, "User data not found.", Toast.LENGTH_SHORT).show();
+                                Toast.makeText(MainActivity.this, "User not found.", Toast.LENGTH_SHORT).show();
                             }
                         }
 
-
                         @Override
-                        public void onCancelled(@NonNull DatabaseError error) {
-                            Toast.makeText(MainActivity.this, "Failed to retrieve user data.", Toast.LENGTH_SHORT).show();
-
+                        public void onCancelled(DatabaseError databaseError) {
+                            Toast.makeText(MainActivity.this, "Error retrieving user data: " + databaseError.getMessage(), Toast.LENGTH_SHORT).show();
                         }
                     });
 
-                    Toast.makeText(MainActivity.this, "Logged in successfully.", Toast.LENGTH_SHORT).show();
-                    Intent intent = new Intent(getApplicationContext(), main_gryffindor.class);
-                    startActivity(intent);
+
 
                 }
                 else {
