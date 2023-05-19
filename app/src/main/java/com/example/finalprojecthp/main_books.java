@@ -76,12 +76,15 @@ public class main_books extends AppCompatActivity {
                 String title = attributesObject.getString("title");
                 String release = attributesObject.getString("release_date");
                 String time = attributesObject.getString("running_time");
+                String rating = attributesObject.getString("rating");
+                String director = attributesObject.getString("directors");
+                String producer = attributesObject.getString("producers");
 
-                ItemData itemData = new ItemData(id,imageUrl, title, release, time);
+                ItemData itemData = new ItemData(id,imageUrl, title, release, time, rating, director, producer);
                 data.add(itemData);
             }
 
-            adapter = new CustomAdapter(data);
+            adapter = new CustomAdapter(this, R.layout.list_item_view, data);
             recyclerView.setAdapter(adapter);
 
         } catch (JSONException e) {

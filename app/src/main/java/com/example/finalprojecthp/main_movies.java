@@ -1,5 +1,6 @@
 package com.example.finalprojecthp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.EditText;
 import android.widget.ImageButton;
@@ -36,8 +37,9 @@ public class main_movies extends AppCompatActivity {
     Spinner moviespinner;
 
 
-    private RecyclerView recyclerView;
-    private CustomAdapter adapter;
+    RecyclerView recyclerView;
+    CustomAdapter adapter;
+    RecyclerView.LayoutManager layoutManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -92,25 +94,34 @@ public class main_movies extends AppCompatActivity {
                 String title = attributesObject.getString("title");
                 String release = attributesObject.getString("release_date");
                 String time = attributesObject.getString("running_time");
+                String rating = attributesObject.getString("rating");
+                String director = attributesObject.getString("directors");
+                String producer = attributesObject.getString("producers");
 
-                ItemData itemData = new ItemData(id,imageUrl, title, release, time);
+                ItemData itemData = new ItemData(id,imageUrl, title, release, time, rating, director, producer);
                 data.add(itemData);
             }
 
-            adapter = new CustomAdapter(data);
+            layoutManager = new LinearLayoutManager(this);
+            adapter = new CustomAdapter(this, R.layout.list_item_view, data);
+            recyclerView.setLayoutManager(layoutManager);
             recyclerView.setAdapter(adapter);
 
         } catch (JSONException e) {
             e.printStackTrace();
             Toast.makeText(main_movies.this, "Error parsing API data", Toast.LENGTH_SHORT).show();
         }
+
+        adapter.setOnItemClickListener(new CustomAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(int position) {
+                Intent show = new Intent(main_movies.this, MovieDetailsActivity.class);
+                show.putExtra("movTitle", data.get(position).getTitle());
+                startActivity(show);
+            }
+        });
+
     }
-
-
-
-
-
-
 
 
 
