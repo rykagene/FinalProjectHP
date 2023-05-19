@@ -12,7 +12,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0dp"
         android:layout_marginTop="5dp"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
@@ -32,8 +32,8 @@
             <!-- back button -->
             <ImageButton
                 android:id="@+id/BTNlogout"
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
                 android:layout_gravity="center"
 
                 android:background="@drawable/back"
@@ -56,6 +56,7 @@
                 android:layout_height="100dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="10dp"
+                android:layout_marginLeft="20dp"
                 android:src="@drawable/potions_title" />
         </LinearLayout>
         <LinearLayout
