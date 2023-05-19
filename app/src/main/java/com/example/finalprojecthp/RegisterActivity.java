@@ -1,12 +1,9 @@
 package com.example.finalprojecthp;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -15,14 +12,19 @@ import android.widget.RadioGroup;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.material.imageview.ShapeableImageView;
 import com.google.firebase.auth.FirebaseAuth;
 
 public class RegisterActivity extends AppCompatActivity {
 
-    String house = "";
+    String house;
     Bitmap gryffBmp, huffleBmp, ravenBmp, slythBmp;
     ShapeableImageView LoginLogo;
+    FirebaseAuth mAuth;
+
+    DAOuser dao = new DAOuser();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,15 +33,17 @@ public class RegisterActivity extends AppCompatActivity {
         setContentView(R.layout.activity_register);
         initialize();
 
+        mAuth = FirebaseAuth.getInstance();
         gryffBmp = BitmapFactory.decodeResource(getResources(),R.drawable.gryff_circle);
         huffleBmp = BitmapFactory.decodeResource(getResources(),R.drawable.huffle_circle);
-        ravenBmp = BitmapFactory.decodeResource(getResources(),R.drawable.raven_circle);
-        slythBmp = BitmapFactory.decodeResource(getResources(),R.drawable.slyth_circle);
     }
 
     private void initialize() {
-        EditText username_signUp = findViewById(R.id.RegisterUsername);
-        EditText name_signUp = findViewById(R.id.RegisterName);
+
+
+//        EditText username_signUp = findViewById(R.id.RegisterUsername);
+        EditText Fname_signUp = findViewById(R.id.RegisterFName);
+        EditText Lname_signUp = findViewById(R.id.RegisterLName);
         EditText email_signUp = findViewById(R.id.RegisterEmail);
         EditText pass_signUp = findViewById(R.id.RegisterPassword);
 
@@ -49,49 +53,78 @@ public class RegisterActivity extends AppCompatActivity {
         RadioButton house3_signUp = findViewById(R.id.RegisterHouseRB3);
         RadioButton house4_signUp = findViewById(R.id.RegisterHouseRB4);
 
+        // Get the selected radio button ID from the RadioGroup
+        int selectedHouseId = RegisterHouseRG.getCheckedRadioButtonId();
+
+        house = "House 1";
+
+        // Determine the selected house based on the radio button ID
+        if (selectedHouseId == R.id.RegisterHouseRB1) {
+            house = "House 1";
+        } else if (selectedHouseId == R.id.RegisterHouseRB2) {
+            house = "House 2";
+        } else if (selectedHouseId == R.id.RegisterHouseRB3) {
+            house = "House 3";
+        } else if (selectedHouseId == R.id.RegisterHouseRB4) {
+            house = "House 4";
+        }
+
+
         LoginLogo = findViewById(R.id.LoginLogo);
 
         Button registerBtn = findViewById(R.id.RegisterBTN);
         TextView loginBtn = findViewById(R.id.RegisterLogBTN);
         TextView reg_back = findViewById(R.id.reg_back);
 
-        FirebaseAuth mAuth;
 
-        mAuth = FirebaseAuth.getInstance();
 
         registerBtn.setOnClickListener(v -> {
-            String user = email_signUp.getText().toString().trim();
+
+            String email = email_signUp.getText().toString().trim();
             String pass = pass_signUp.getText().toString().trim();
+            String fname = Fname_signUp.getText().toString().trim();
+            String lname = Lname_signUp.getText().toString().trim();
 
-            String username = username_signUp.getText().toString();
-            String name = username_signUp.getText().toString();
+//            String username = username_signUp.getText().toString();
+//            String name = username_signUp.getText().toString();
 
-            if(user.isEmpty()) {
+            if(email.isEmpty()) {
                 email_signUp.setError("Sorry, you must enter an email.");
             }
             if(pass.isEmpty()) {
                 pass_signUp.setError("Sorry, you must enter a password.");
             }
-            if(name.isEmpty()) {
-                name_signUp.setError("Sorry, you must enter a name.");
+            if(fname.isEmpty()) {
+                Fname_signUp.setError("Sorry, you must enter a name.");
             }
-            if(username.isEmpty()) {
-                username_signUp.setError("Sorry, you must enter a username.");
+            if(lname.isEmpty()) {
+                Lname_signUp.setError("Sorry, you must enter a name.");
             }
+//            if(username.isEmpty()) {
+//                username_signUp.setError("Sorry, you must enter a username.");
+//            }
 
-            else if(house.isEmpty()) {
-                Toast.makeText(this, "Please pick a house", Toast.LENGTH_SHORT).show();;
-            }
+//            else if(house.isEmpty()) {
+//                Toast.makeText(this, "Please pick a house", Toast.LENGTH_SHORT).show();;
+//            }
 
             else {
-                mAuth.createUserWithEmailAndPassword(user,pass).addOnCompleteListener(task -> {
+
+                mAuth.createUserWithEmailAndPassword(email, pass).addOnCompleteListener(task -> {
                     if (task.isSuccessful()) {
-                        Toast.makeText(RegisterActivity.this, "Register Success", Toast.LENGTH_SHORT).show();
-                    }
-                    else {
+
+                        // Store additional user information in the database
+                        User userDetails = new User(email,pass, fname,lname, house);
+                        dao.add(userDetails).addOnCompleteListener(suc -> {
+                            Toast.makeText(RegisterActivity.this, "Register Success", Toast.LENGTH_SHORT).show();
+                        }).addOnFailureListener(er -> {
+                            Toast.makeText(RegisterActivity.this, er.getMessage(), Toast.LENGTH_SHORT).show();
+                        });
+                    } else {
                         Toast.makeText(RegisterActivity.this, "Register Failed", Toast.LENGTH_SHORT).show();
                     }
                 });
+
             }
 
         });
@@ -109,12 +142,10 @@ public class RegisterActivity extends AppCompatActivity {
 
                     case R.id.RegisterHouseRB2:
                         house = house2_signUp.getText().toString();
-                        LoginLogo.setImageBitmap(slythBmp);
                         break;
 
                     case R.id.RegisterHouseRB3:
                         house = house3_signUp.getText().toString();
-                        LoginLogo.setImageBitmap(ravenBmp);
                         break;
 
                     case R.id.RegisterHouseRB4:
@@ -123,6 +154,8 @@ public class RegisterActivity extends AppCompatActivity {
                         break;
 
                 }
+
+
             }
         });
 
