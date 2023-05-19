@@ -52,7 +52,7 @@
                 android:layout_width="320dp"
                 android:layout_height="1000dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="86dp"
                 android:background="@drawable/reg_reglayout"
                 android:orientation="vertical">
 
@@ -68,30 +68,26 @@
                     android:layout_marginTop="50dp"
                     />
 
-                <RadioGroup
+                <LinearLayout
+                    android:layout_width="320dp"
+                    android:layout_height="wrap_content">
+
+                    <RadioGroup
                     android:id="@+id/RegisterHouseRG"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:gravity="center">
 
-                    <TextView
+                        <TextView
                         android:layout_width="200dp"
                         android:layout_height="40dp"
-                        android:gravity="center"
                         android:text="Pick a House"
+                        android:gravity="center"
                         android:textSize="30sp"
                         android:textColor="#4a4a4a"
-                        android:fontFamily="@font/magicschool_two"
-                        />
+                        android:fontFamily="@font/magicschool_two"/>
 
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_marginTop="5dp"
-                        android:layout_gravity="center">
-
-                    <RadioButton
+                        <RadioButton
                         android:id="@+id/RegisterHouseRB1"
                         android:layout_width="120dp"
                         android:layout_height="wrap_content"
@@ -100,25 +96,16 @@
                         android:fontFamily="@font/montserrat_medium"
                         android:textSize="14sp"/>
 
-                    <RadioButton
+                        <RadioButton
                         android:id="@+id/RegisterHouseRB2"
-                        android:layout_width="110dp"
+                        android:layout_width="120dp"
                         android:layout_height="wrap_content"
                         android:text="Slytherin"
                         android:textColor="#4a4a4a"
                         android:fontFamily="@font/montserrat_medium"
                         android:textSize="14sp"/>
 
-                    </LinearLayout>
-
-                    <LinearLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:orientation="horizontal"
-                        android:layout_marginTop="5dp"
-                        android:layout_gravity="center">
-
-                    <RadioButton
+                        <RadioButton
                         android:id="@+id/RegisterHouseRB3"
                         android:layout_width="120dp"
                         android:layout_height="wrap_content"
@@ -127,18 +114,18 @@
                         android:fontFamily="@font/montserrat_medium"
                         android:textSize="14sp"/>
 
-                    <RadioButton
+                        <RadioButton
                         android:id="@+id/RegisterHouseRB4"
-                        android:layout_width="110dp"
+                        android:layout_width="120dp"
                         android:layout_height="wrap_content"
                         android:text="Hufflepuff"
                         android:textColor="#4a4a4a"
                         android:fontFamily="@font/montserrat_medium"
                         android:textSize="14sp"/>
 
-                    </LinearLayout>
+                    </RadioGroup>
 
-                </RadioGroup>
+                </LinearLayout>
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="320dp"
@@ -275,7 +262,6 @@
 
                 </com.google.android.material.textfield.TextInputLayout>
 
-
                 <Button
                     android:id="@+id/RegisterBTN"
                     android:layout_width="220dp"
@@ -293,7 +279,7 @@
                     android:layout_height="30dp"
                     android:layout_gravity="center"
                     android:gravity="center"
-                    android:layout_marginBottom="100dp"
+                    android:layout_marginBottom="120dp"
                     android:orientation="horizontal">
 
                     <TextView

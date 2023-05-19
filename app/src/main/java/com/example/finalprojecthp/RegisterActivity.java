@@ -36,12 +36,12 @@ public class RegisterActivity extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         gryffBmp = BitmapFactory.decodeResource(getResources(),R.drawable.gryff_circle);
         huffleBmp = BitmapFactory.decodeResource(getResources(),R.drawable.huffle_circle);
+        ravenBmp = BitmapFactory.decodeResource(getResources(),R.drawable.raven_circle);
+        slythBmp = BitmapFactory.decodeResource(getResources(),R.drawable.slyth_circle);
     }
 
     private void initialize() {
 
-
-//        EditText username_signUp = findViewById(R.id.RegisterUsername);
         EditText Fname_signUp = findViewById(R.id.RegisterFName);
         EditText Lname_signUp = findViewById(R.id.RegisterLName);
         EditText email_signUp = findViewById(R.id.RegisterEmail);
@@ -85,8 +85,6 @@ public class RegisterActivity extends AppCompatActivity {
             String fname = Fname_signUp.getText().toString().trim();
             String lname = Lname_signUp.getText().toString().trim();
 
-//            String username = username_signUp.getText().toString();
-//            String name = username_signUp.getText().toString();
 
             if(email.isEmpty()) {
                 email_signUp.setError("Sorry, you must enter an email.");
@@ -100,13 +98,9 @@ public class RegisterActivity extends AppCompatActivity {
             if(lname.isEmpty()) {
                 Lname_signUp.setError("Sorry, you must enter a name.");
             }
-//            if(username.isEmpty()) {
-//                username_signUp.setError("Sorry, you must enter a username.");
-//            }
-
-//            else if(house.isEmpty()) {
-//                Toast.makeText(this, "Please pick a house", Toast.LENGTH_SHORT).show();;
-//            }
+            else if(house.isEmpty()) {
+                Toast.makeText(this, "Please pick a house", Toast.LENGTH_SHORT).show();;
+           }
 
             else {
 
@@ -142,10 +136,12 @@ public class RegisterActivity extends AppCompatActivity {
 
                     case R.id.RegisterHouseRB2:
                         house = house2_signUp.getText().toString();
+                        LoginLogo.setImageBitmap(slythBmp);
                         break;
 
                     case R.id.RegisterHouseRB3:
                         house = house3_signUp.getText().toString();
+                        LoginLogo.setImageBitmap(ravenBmp);
                         break;
 
                     case R.id.RegisterHouseRB4:
@@ -154,7 +150,6 @@ public class RegisterActivity extends AppCompatActivity {
                         break;
 
                 }
-
 
             }
         });
