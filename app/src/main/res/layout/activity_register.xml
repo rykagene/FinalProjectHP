@@ -63,7 +63,7 @@
                     app:strokeColor="#80CBC4"
                     app:strokeWidth="1dp"
                     android:layout_height="90dp"
-                    tools:src="@drawable/hogwarts"
+                    android:background="@drawable/hogwarts"
                     android:layout_gravity="center"
                     android:layout_marginTop="50dp"
                     />

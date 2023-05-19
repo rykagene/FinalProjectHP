@@ -6,14 +6,20 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
 public class Profile extends AppCompatActivity {
 
@@ -42,7 +48,38 @@ public class Profile extends AppCompatActivity {
 
         firebaseAuth = FirebaseAuth.getInstance();
         user = firebaseAuth.getCurrentUser();
-        userRef = FirebaseDatabase.getInstance().getReference("User").child(user.getUid());
+
+        // Retrieve the key dynamically from the database
+        DatabaseReference databaseRef = FirebaseDatabase.getInstance().getReference().child("User");
+        Query query = databaseRef.orderByChild("email").equalTo(user.getEmail());
+        query.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if (snapshot.exists()) {
+                    for (DataSnapshot userSnapshot : snapshot.getChildren()) {
+
+                        // retrieve ng id, fname,lname
+                        String key = userSnapshot.getKey();
+                        String fname = userSnapshot.child("fname").getValue(String.class);
+                        String lname = userSnapshot.child("lname").getValue(String.class);
+
+
+                        tvName.setText(fname+" "+lname);
+
+                        //set the textbox value
+                        et_Fname.setText(fname);
+                        et_Lname.setText(lname);
+
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+                Toast.makeText(Profile.this, "Failed to retrieve data.", Toast.LENGTH_SHORT).show();
+            }
+        });
+
 
         if (user != null) {
             String email = user.getEmail();
@@ -50,32 +87,8 @@ public class Profile extends AppCompatActivity {
 
         }
 
-//        if (user != null) {
-//            String email = user.getEmail();
-//            tvEmail.setText(email);
-//            et_Email.setText(email);
-//
-//            userRef.addListenerForSingleValueEvent(new ValueEventListener() {
-//                @Override
-//                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-//                    if (dataSnapshot.exists()) {
-//                        User userDetails = dataSnapshot.getValue(User.class);
-//                        if (userDetails != null) {
-//                            fname = userDetails.getFname();
-//                            lname = userDetails.getLname();
-//                            tvName.setText(fname + " " + lname);
-//                            et_Fname.setText(fname);
-//                            et_Lname.setText(lname);
-//                        }
-//                    }
-//                }
-//
-//                @Override
-//                public void onCancelled(@NonNull DatabaseError databaseError) {
-//                    // Handle the error
-//                }
-//            });
-//        }
+
+
 
         btnUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -92,7 +105,5 @@ public class Profile extends AppCompatActivity {
                 startActivity(intent);
             }
         });
-
-
     }
 }

@@ -5,9 +5,14 @@ public class User {
     private String email, fname, lname, pass, house;
 
 
+    public User(String newPassword) {
+
+    }
+
     public User() {
 
     }
+
 
     public User(String email,String pass,String fname, String lname,   String house) {
         this.email = email;
