@@ -53,21 +53,8 @@ public class RegisterActivity extends AppCompatActivity {
         RadioButton house3_signUp = findViewById(R.id.RegisterHouseRB3);
         RadioButton house4_signUp = findViewById(R.id.RegisterHouseRB4);
 
-        // Get the selected radio button ID from the RadioGroup
-        int selectedHouseId = RegisterHouseRG.getCheckedRadioButtonId();
 
-        house = "House 1";
 
-        // Determine the selected house based on the radio button ID
-        if (selectedHouseId == R.id.RegisterHouseRB1) {
-            house = "House 1";
-        } else if (selectedHouseId == R.id.RegisterHouseRB2) {
-            house = "House 2";
-        } else if (selectedHouseId == R.id.RegisterHouseRB3) {
-            house = "House 3";
-        } else if (selectedHouseId == R.id.RegisterHouseRB4) {
-            house = "House 4";
-        }
 
 
         LoginLogo = findViewById(R.id.LoginLogo);
