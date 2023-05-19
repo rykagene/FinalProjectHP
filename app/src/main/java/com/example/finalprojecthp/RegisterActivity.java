@@ -33,6 +33,8 @@ public class RegisterActivity extends AppCompatActivity {
 
         gryffBmp = BitmapFactory.decodeResource(getResources(),R.drawable.gryff_circle);
         huffleBmp = BitmapFactory.decodeResource(getResources(),R.drawable.huffle_circle);
+        ravenBmp = BitmapFactory.decodeResource(getResources(),R.drawable.raven_circle);
+        slythBmp = BitmapFactory.decodeResource(getResources(),R.drawable.slyth_circle);
     }
 
     private void initialize() {
@@ -107,10 +109,12 @@ public class RegisterActivity extends AppCompatActivity {
 
                     case R.id.RegisterHouseRB2:
                         house = house2_signUp.getText().toString();
+                        LoginLogo.setImageBitmap(slythBmp);
                         break;
 
                     case R.id.RegisterHouseRB3:
                         house = house3_signUp.getText().toString();
+                        LoginLogo.setImageBitmap(ravenBmp);
                         break;
 
                     case R.id.RegisterHouseRB4:
