@@ -52,7 +52,7 @@
                 android:layout_width="320dp"
                 android:layout_height="1000dp"
                 android:layout_gravity="center"
-                android:layout_marginTop="90dp"
+                android:layout_marginTop="50dp"
                 android:background="@drawable/reg_reglayout"
                 android:orientation="vertical">
 
@@ -63,18 +63,82 @@
                     app:strokeColor="#80CBC4"
                     app:strokeWidth="1dp"
                     android:layout_height="90dp"
-                    tools:src="@drawable/reg_icon"
+                    tools:src="@drawable/hogwarts"
                     android:layout_gravity="center"
                     android:layout_marginTop="50dp"
                     />
 
-                <TextView
-                    android:layout_width="127dp"
-                    android:layout_height="25dp"
-                    android:text="Add a Profile Picture"
-                    android:fontFamily="@font/magicschool_one"
-                    android:textSize="20sp"
-                    android:layout_gravity="center"/>
+                <RadioGroup
+                    android:id="@+id/RegisterHouseRG"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center">
+
+                    <TextView
+                        android:layout_width="200dp"
+                        android:layout_height="40dp"
+                        android:gravity="center"
+                        android:text="Pick a House"
+                        android:textSize="30sp"
+                        android:textColor="#4a4a4a"
+                        android:fontFamily="@font/magicschool_two"
+                        />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="5dp"
+                        android:layout_gravity="center">
+
+                    <RadioButton
+                        android:id="@+id/RegisterHouseRB1"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:text="Gryffindor"
+                        android:textColor="#4a4a4a"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:textSize="14sp"/>
+
+                    <RadioButton
+                        android:id="@+id/RegisterHouseRB2"
+                        android:layout_width="110dp"
+                        android:layout_height="wrap_content"
+                        android:text="Slytherin"
+                        android:textColor="#4a4a4a"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:textSize="14sp"/>
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:layout_marginTop="5dp"
+                        android:layout_gravity="center">
+
+                    <RadioButton
+                        android:id="@+id/RegisterHouseRB3"
+                        android:layout_width="120dp"
+                        android:layout_height="wrap_content"
+                        android:text="Ravenclaw"
+                        android:textColor="#4a4a4a"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:textSize="14sp"/>
+
+                    <RadioButton
+                        android:id="@+id/RegisterHouseRB4"
+                        android:layout_width="110dp"
+                        android:layout_height="wrap_content"
+                        android:text="Hufflepuff"
+                        android:textColor="#4a4a4a"
+                        android:fontFamily="@font/montserrat_medium"
+                        android:textSize="14sp"/>
+
+                    </LinearLayout>
+
+                </RadioGroup>
 
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="320dp"
@@ -211,70 +275,6 @@
 
                 </com.google.android.material.textfield.TextInputLayout>
 
-
-                <RadioGroup
-                    android:id="@+id/RegisterHouseRG"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="30dp"
-                    android:layout_marginTop="10dp">
-
-                    <TextView
-                        android:layout_width="260dp"
-                        android:layout_height="50dp"
-                        android:text="Pick a House"
-                        android:textSize="16sp"
-                        android:textColor="#4a4a4a"
-                        android:padding="12dp"
-                        android:fontFamily="@font/montserrat_medium"
-                        android:drawableStart="@drawable/reg_custom_house"
-                        android:drawablePadding="10dp"
-                        android:paddingStart="10dp"
-                        android:paddingEnd="10dp"
-                        android:paddingBottom="10dp"
-                        />
-
-                    <RadioButton
-                        android:id="@+id/RegisterHouseRB1"
-                        android:layout_width="150dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
-                        android:text="Gryffindor"
-                        android:textColor="#4a4a4a"
-                        android:fontFamily="@font/montserrat_medium"
-                        android:textSize="14sp"/>
-
-                    <RadioButton
-                        android:id="@+id/RegisterHouseRB2"
-                        android:layout_width="150dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
-                        android:text="Slytherin"
-                        android:textColor="#4a4a4a"
-                        android:fontFamily="@font/montserrat_medium"
-                        android:textSize="14sp"/>
-
-                    <RadioButton
-                        android:id="@+id/RegisterHouseRB3"
-                        android:layout_width="150dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
-                        android:text="Ravenclaw"
-                        android:textColor="#4a4a4a"
-                        android:fontFamily="@font/montserrat_medium"
-                        android:textSize="14sp"/>
-
-                    <RadioButton
-                        android:id="@+id/RegisterHouseRB4"
-                        android:layout_width="150dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginLeft="8dp"
-                        android:text="Hufflepuff"
-                        android:textColor="#4a4a4a"
-                        android:fontFamily="@font/montserrat_medium"
-                        android:textSize="14sp"/>
-
-                </RadioGroup>
 
                 <Button
                     android:id="@+id/RegisterBTN"

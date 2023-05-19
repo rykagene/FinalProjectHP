@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.view.View;
@@ -19,10 +20,8 @@ import com.google.firebase.auth.FirebaseAuth;
 
 public class RegisterActivity extends AppCompatActivity {
 
-    final int REQUEST_CODE = 1;
-    final int REQUEST_CODE_CAM = 2;
     String house = "";
-    Bitmap bmp;
+    Bitmap gryffBmp, huffleBmp, ravenBmp, slythBmp;
     ShapeableImageView LoginLogo;
 
     @Override
@@ -31,6 +30,9 @@ public class RegisterActivity extends AppCompatActivity {
         FullScreen.makeFullScreen(this);
         setContentView(R.layout.activity_register);
         initialize();
+
+        gryffBmp = BitmapFactory.decodeResource(getResources(),R.drawable.gryff_circle);
+        huffleBmp = BitmapFactory.decodeResource(getResources(),R.drawable.huffle_circle);
     }
 
     private void initialize() {
@@ -100,6 +102,7 @@ public class RegisterActivity extends AppCompatActivity {
                 switch (checkedId) {
                     case R.id.RegisterHouseRB1:
                         house = house1_signUp.getText().toString();
+                        LoginLogo.setImageBitmap(gryffBmp);
                         break;
 
                     case R.id.RegisterHouseRB2:
@@ -112,17 +115,10 @@ public class RegisterActivity extends AppCompatActivity {
 
                     case R.id.RegisterHouseRB4:
                         house = house4_signUp.getText().toString();
+                        LoginLogo.setImageBitmap(huffleBmp);
                         break;
 
                 }
-            }
-        });
-
-        LoginLogo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent camera = new Intent(MediaStore.ACTION_IMAGE_CAPTURE);
-                startActivityForResult(camera, REQUEST_CODE_CAM);
             }
         });
 
@@ -143,14 +139,4 @@ public class RegisterActivity extends AppCompatActivity {
 
     }
 
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == REQUEST_CODE_CAM && resultCode == RESULT_OK) {
-            Bundle extras = data.getExtras();
-            Bitmap photo = (Bitmap) extras.get("data");
-            bmp = photo;
-            LoginLogo.setImageBitmap(photo);
-        }
-    }
 }
