@@ -17,7 +17,6 @@ public class Profile extends AppCompatActivity {
     Button btnUpdate, btnBack;
     TextView tvEmail, tv_changePS;
 
-    EditText et_Email;
 
     FirebaseAuth firebaseAuth;
     FirebaseUser user;
@@ -31,18 +30,12 @@ public class Profile extends AppCompatActivity {
         setContentView(R.layout.activity_profile);
 
         btnUpdate = findViewById(R.id.btnUpdate);
-        et_Email = findViewById(R.id.etEmail);
+
         tvEmail = findViewById(R.id.tvEmail);
         tv_changePS = findViewById(R.id.tv_changePS);
 
         firebaseAuth = FirebaseAuth.getInstance();
         user = firebaseAuth.getCurrentUser();
-
-        if (user != null) {
-            String email = user.getEmail();
-            tvEmail.setText(email);
-            et_Email.setText(email);
-        }
 
         btnUpdate.setOnClickListener(new View.OnClickListener() {
             @Override
