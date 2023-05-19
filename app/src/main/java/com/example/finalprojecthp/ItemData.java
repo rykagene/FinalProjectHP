@@ -9,8 +9,12 @@ public class ItemData {
     private String rating;
     private String director;
     private String producer;
+    private String trailer;
+    private String budget;
+    private String boxoffice;
+    private String wiki;
 
-    public ItemData(String id, String imageUrl, String title, String release, String time, String rating, String director, String producer) {
+    public ItemData(String id, String imageUrl, String title, String release, String time, String rating, String director, String producer, String trailer, String budget, String boxoffice, String wiki) {
         this.id = id;
         this.imageUrl = imageUrl;
         this.title = title;
@@ -19,6 +23,10 @@ public class ItemData {
         this.rating = rating;
         this.director = director;
         this.producer = producer;
+        this.trailer = trailer;
+        this.budget = budget;
+        this.boxoffice = boxoffice;
+        this.wiki = wiki;
     }
 
     public String getImageUrl() {
@@ -42,5 +50,17 @@ public class ItemData {
     }
     public String getProducer() {
         return producer;
+    }
+    public String getTrailer() {
+        return trailer;
+    }
+    public String getBudget() {
+        return budget;
+    }
+    public String getBoxoffice() {
+        return boxoffice;
+    }
+    public String getWiki() {
+        return wiki;
     }
 }

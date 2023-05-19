@@ -79,8 +79,12 @@ public class main_books extends AppCompatActivity {
                 String rating = attributesObject.getString("rating");
                 String director = attributesObject.getString("directors");
                 String producer = attributesObject.getString("producers");
+                String trailer = attributesObject.getString("trailer");
+                String budget = attributesObject.getString("budget");
+                String boxoffice = attributesObject.getString("box_office");
+                String wiki = attributesObject.getString("wiki");
 
-                ItemData itemData = new ItemData(id,imageUrl, title, release, time, rating, director, producer);
+                ItemData itemData = new ItemData(id,imageUrl, title, release, time, rating, director, producer, trailer, budget, boxoffice, wiki);
                 data.add(itemData);
             }
 

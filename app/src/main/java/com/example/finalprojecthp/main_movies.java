@@ -30,13 +30,6 @@ import java.util.List;
 
 public class main_movies extends AppCompatActivity {
 
-    TextView TVtitle, TVsmovie, TVrdate, TVrtime, TVbudget, TVboxoffice, TVdistributors, TVrating, TVorder, TVtrailer, TVwiki, TVdirectors, TVscreenwriters, TVproducers, TVeditors, TVmsccomp, TVsummary;
-    ImageButton BTNsearch;
-    ImageView char_image;
-    EditText ETsearch;
-    Spinner moviespinner;
-
-
     RecyclerView recyclerView;
     CustomAdapter adapter;
     RecyclerView.LayoutManager layoutManager;
@@ -47,8 +40,6 @@ public class main_movies extends AppCompatActivity {
         FullScreen.makeFullScreen(this);
         setContentView(R.layout.activity_main_movies);
         initialize();
-
-
 
         recyclerView = findViewById(R.id.recycler_view);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -97,8 +88,12 @@ public class main_movies extends AppCompatActivity {
                 String rating = attributesObject.getString("rating");
                 String director = attributesObject.getString("directors");
                 String producer = attributesObject.getString("producers");
+                String trailer = attributesObject.getString("trailer");
+                String budget = attributesObject.getString("budget");
+                String boxoffice = attributesObject.getString("box_office");
+                String wiki = attributesObject.getString("wiki");
 
-                ItemData itemData = new ItemData(id,imageUrl, title, release, time, rating, director, producer);
+                ItemData itemData = new ItemData(id,imageUrl, title, release, time, rating, director, producer, trailer, budget, boxoffice, wiki);
                 data.add(itemData);
             }
 
@@ -116,14 +111,22 @@ public class main_movies extends AppCompatActivity {
             @Override
             public void onItemClick(int position) {
                 Intent show = new Intent(main_movies.this, MovieDetailsActivity.class);
+                show.putExtra("movId", data.get(position).getId());
                 show.putExtra("movTitle", data.get(position).getTitle());
+                show.putExtra("movRelease", data.get(position).getRelease());
+                show.putExtra("movTime", data.get(position).getTime());
+                show.putExtra("movRating", data.get(position).getRating());
+                show.putExtra("movDirector", data.get(position).getDirector());
+                show.putExtra("movProducer", data.get(position).getProducer());
+                show.putExtra("movTrailer", data.get(position).getTrailer());
+                show.putExtra("movBudget", data.get(position).getBudget());
+                show.putExtra("movBoxOffice", data.get(position).getBoxoffice());
+                show.putExtra("movWiki", data.get(position).getWiki());
                 startActivity(show);
             }
         });
 
     }
-
-
 
 
     @Override

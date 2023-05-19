@@ -2,12 +2,14 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/white">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="250dp"
         android:orientation="vertical">
+
         <WebView
             android:id="@+id/youtubeWebView"
             android:layout_width="match_parent"
@@ -16,30 +18,81 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <TextView
             android:id="@+id/titleTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_gravity="left"
-            android:layout_marginBottom="30dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:layout_marginBottom="20dp"
+            android:paddingTop="10dp"
             android:text="Title"
-            android:fontFamily="@font/montserrat_medium"
-            android:textSize="25sp"/>
+            android:fontFamily="@font/montserrat_black"
+            android:textSize="24sp"
+            android:textColor="@color/black"/>
+
         <TextView
             android:id="@+id/detailsTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="TextView" />
+            android:padding="10dp"
+            android:text="TextView"
+            android:fontFamily="@font/opensans_medium"
+            android:textSize="18sp"
+            android:textColor="@color/black"/>
+
         <TextView
             android:id="@+id/directorTextView"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="TextView" />
+            android:layout_height="130dp"
+            android:padding="10dp"
+            android:text="TextView"
+            android:fontFamily="@font/opensans_medium"
+            android:textSize="18sp"
+            android:textColor="@color/black"/>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:background="@color/white">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/ViewWIKI"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:backgroundTint="#f0874a"
+            android:text="View WIKI"
+            android:fontFamily="@font/opensans_extrabold"
+            android:textColor="@color/white"
+            android:textSize="14dp" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/BackBTN"
+            android:layout_width="150dp"
+            android:layout_height="60dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginEnd="15dp"
+            android:backgroundTint="#80aecb"
+            android:text="Back"
+            android:fontFamily="@font/opensans_extrabold"
+            android:textColor="@color/white"
+            android:textSize="14dp" />
+
+
     </LinearLayout>
 
 
