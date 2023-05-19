@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/potionroom"
     android:orientation="vertical"
-    tools:context=".main_spells">
+    tools:context=".main_books">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -20,6 +20,12 @@
             android:layout_height="100dp"
             android:layout_gravity="center"
             android:src="@drawable/books" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycler_view"
+        android:layout_width="match_parent"
+            android:layout_height="match_parent"/>
+
 
         <LinearLayout
             android:layout_width="match_parent"
