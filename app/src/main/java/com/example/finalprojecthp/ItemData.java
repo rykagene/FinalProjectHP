@@ -7,7 +7,7 @@ public class ItemData {
     private String time;
     private String id;
 
-    public ItemData(String id, String imageUrl, String title, String release, String time) {
+    public ItemData(String id1, String url, String s, String id, String imageUrl, String title, String release, String time) {
         this.id = id;
         this.imageUrl = imageUrl;
         this.title = title;
