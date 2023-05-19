@@ -27,6 +27,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:layout_gravity="center"
+            android:paddingRight="20dp"
             android:gravity="center">
             <!-- back button -->
             <ImageButton
@@ -186,7 +187,7 @@
                    android:layout_marginTop="5dp"
                    android:layout_marginBottom="5dp"
                    android:paddingLeft="20dp"
-                   android:text="No# of Ingredients: "
+                   android:text="No. of Ingredients: "
                    android:textColor="@color/white"
                    android:textSize="20dp" />
                <Spinner
