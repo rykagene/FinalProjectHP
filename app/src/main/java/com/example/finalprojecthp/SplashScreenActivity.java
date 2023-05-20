@@ -21,9 +21,6 @@ public class SplashScreenActivity extends AppCompatActivity {
 
         videoView = findViewById(R.id.videoView);
 
-        Intent intent = new Intent(SplashScreenActivity.this, MainActivity.class);
-        startActivity(intent);
-
 
     }
 
