@@ -115,7 +115,7 @@
             />
 
         <TextView
-            android:id="@+id/TVname"
+            android:id="@+id/NAME"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -129,7 +129,7 @@
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/TVeffect"
+            android:id="@+id/INCANTATION"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -138,10 +138,10 @@
             android:textColor="#B4B4B4"
             android:textSize="20dp"
             android:paddingLeft="20dp"
-            android:text="Effect: " />
+            android:text="Incantation: " />
 
         <TextView
-            android:id="@+id/TVsideeffect"
+            android:id="@+id/EFFECT"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -150,9 +150,9 @@
             android:paddingLeft="20dp"
             android:textColor="#B4B4B4"
             android:textSize="20dp"
-            android:text="Side Effects: " />
+            android:text="Effects: " />
         <TextView
-            android:id="@+id/TVcharacteristics"
+            android:id="@+id/CATEGORY"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
@@ -160,10 +160,10 @@
             android:paddingLeft="20dp"
             android:textColor="#B4B4B4"
             android:textSize="20dp"
-            android:text="Characteristics: " />
+            android:text="Category: " />
 
         <TextView
-            android:id="@+id/TVtime"
+            android:id="@+id/LIGHT"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
@@ -172,43 +172,9 @@
             android:paddingLeft="20dp"
             android:textColor="#B4B4B4"
             android:textSize="20dp"
-            android:text="Time to brew: " />
+            android:text="Light " />
 
-        <TextView
-            android:id="@+id/TVdiff"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
-            android:paddingLeft="20dp"
-            android:textColor="#B4B4B4"
-            android:textSize="20dp"
-            android:text="Difficulty: " />
 
-        <TextView
-            android:id="@+id/TVingredients"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
-            android:paddingLeft="20dp"
-            android:textColor="#B4B4B4"
-            android:textSize="20dp"
-            android:text="Ingredients: " />
-
-        <TextView
-            android:id="@+id/TVinventors"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"
-            android:paddingLeft="20dp"
-            android:textColor="#B4B4B4"
-            android:textSize="20dp"
-            android:text="Inventors: " />
 
     </LinearLayout>
 
