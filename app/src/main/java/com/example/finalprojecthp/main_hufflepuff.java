@@ -1,24 +1,18 @@
 package com.example.finalprojecthp;
 
-import androidx.appcompat.app.AlertDialog;
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.Dialog;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
-import android.widget.TextView;
 
-import com.google.firebase.auth.FirebaseAuth;
+import androidx.appcompat.app.AppCompatActivity;
 
 public class main_hufflepuff extends AppCompatActivity {
 
     private Dialog logoutConfirmationDialog;
 
-    ImageButton BTNcharacters, BTNspell, BTNbooks, BTNmovies, BTNpotions, BTNwands, BTNlogout;
+    ImageButton BTNcharacters, BTNspell, BTNbooks, BTNmovies, BTNpotions, BTNwands, BTNlogout, BTNprofile;;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,22 +34,28 @@ public class main_hufflepuff extends AppCompatActivity {
         BTNmovies = findViewById(R.id.BTNmovies);
         BTNpotions = findViewById(R.id.BTNpotions);
         BTNwands = findViewById(R.id.BTNwands);
-
+        BTNprofile = findViewById(R.id.BTNprofile);
         BTNlogout = findViewById(R.id.BTNlogout);
 
         BTNlogout.setOnClickListener(v -> {
             logout();
         });
 
-
-        BTNcharacters.setOnClickListener(new View.OnClickListener() {
+        BTNprofile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), main_spells.class);
+                Intent intent = new Intent(getApplicationContext(), Profile.class);
                 startActivity(intent);
             }
         });
 
+        BTNcharacters.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), main_characters.class);
+                startActivity(intent);
+            }
+        });
         BTNspell.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

@@ -14,8 +14,8 @@
 
     <ImageButton
         android:id="@+id/btnBackP"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="25dp"
         android:background="@drawable/back"
@@ -65,7 +65,7 @@
         <EditText
             android:id="@+id/fname"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_height="50dp"
             android:hint="First Name"
             android:textSize="20dp"
             android:textColor="@color/white"
@@ -84,14 +84,14 @@
     <EditText
         android:id="@+id/lname"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:hint="Last name"
         android:layout_marginLeft="25dp"
         android:layout_marginRight="25dp"
         android:textColor="@color/white"
         android:textSize="20dp"
         android:layout_marginTop="15dp"
-
+        android:drawableStart="@drawable/ic_name"
         android:drawablePadding="10dp"
         android:background="@drawable/custom_input"
         android:paddingStart="10dp"

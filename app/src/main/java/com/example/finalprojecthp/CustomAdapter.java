@@ -1,7 +1,6 @@
 package com.example.finalprojecthp;
 
 import android.content.Context;
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -54,7 +53,7 @@ public class CustomAdapter extends RecyclerView.Adapter<CustomAdapter.ViewHolder
                 // Use an image loading library like Picasso or Glide to load the image from the URL
                 // into an ImageView in your list_item_view layout. Refer to their documentation for usage.
                 // Example with Picasso:
-                 Picasso.get().load(item.getImageUrl()).into(holder.imageView);
+                Picasso.get().load(item.getImageUrl()).into(holder.imageView);
 
         }
 
