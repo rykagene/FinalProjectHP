@@ -9,13 +9,12 @@
     tools:context=".main_movies">
 
 
-
-        <ImageView
-            android:layout_marginTop="20dp"
-            android:layout_width="wrap_content"
-            android:layout_height="100dp"
-            android:layout_gravity="center"
-            android:src="@drawable/moviep" />
+    <ImageView
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:layout_height="100dp"
+        android:layout_gravity="center"
+        android:src="@drawable/moviep" />
 
 
     <LinearLayout
